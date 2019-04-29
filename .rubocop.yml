@@ -1,0 +1,23 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  # note Exclude: overrides, does not merge with, default.
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - '.git/**/*'
+    - 'solargraph/*'
+    - 'db/schema.rb'
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'db/migrate/**/*'
+    - 'app/controllers/blogs_controller.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/helpers/blogs_helper.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/application_record.rb'
+    - 'config/application.rb'

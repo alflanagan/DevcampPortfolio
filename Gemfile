@@ -53,3 +53,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "rcodetools", "~> 0.8.5", :group => :development
+
+gem "rubocop", "~> 0.68.0", :group => :development
+
+gem "rubocop-performance", "~> 1.1", :group => :development
+
+gem "ruby-debug-ide", "~> 0.6.1", :group => :development
+
+gem "sassc-rails", "~> 2.1", :group => :development

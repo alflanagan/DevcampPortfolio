@@ -15,9 +15,14 @@ Style/Documentation:
     - 'spec/**/*'
     - 'test/**/*'
     - 'db/migrate/**/*'
-    - 'app/controllers/blogs_controller.rb'
     - 'app/helpers/application_helper.rb'
-    - 'app/helpers/blogs_helper.rb'
     - 'app/mailers/application_mailer.rb'
     - 'app/models/application_record.rb'
     - 'config/application.rb'
+
+Layout/IndentationConsistency:
+  EnforcedStyle: 'rails'
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: 'when_needed'
+

@@ -63,3 +63,5 @@ gem "rubocop-performance", "~> 1.1", :group => :development
 gem "ruby-debug-ide", "~> 0.6.1", :group => :development
 
 gem "sassc-rails", "~> 2.1", :group => :development
+
+gem "debase", "~> 0.2.2"

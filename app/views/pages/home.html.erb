@@ -1,6 +1,10 @@
 <h1>Homepage</h1>
-<h3>My Blog</h3>
+<h3>Blog Posts</h3>
 <% for post in @posts %>
 <p><em><%= post.title %><em></p>
+<% end %>
+<h3>Skills</h3>
+<% for skill in @skills %>
+<p><%= skill.title %> (<%= skill.percent_used %>%)</p>
 <% end %>
 

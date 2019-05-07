@@ -1,4 +1,4 @@
-10.times do |blog|
+count = 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
     body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -17,18 +17,18 @@
   )
 end
 
-puts "10 blogs created"
+puts "#{count} blogs created"
 
-5.times do |skill|
+count = 5.times do |skill|
   Skill.create!(
     title: "Rails #{skill}",
     percent_used: 15
   )
 end
 
-puts "5 skills created"
+puts "#{count} skills created"
 
-9.times do |item|
+count = 9.times do |item|
   Portfolio.create!(
     title: "Portfolio Title #{item}",
     subtitle: "My great service",
@@ -38,9 +38,9 @@ puts "5 skills created"
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
     non recusandae.",
-    main_image: "https://via.placeholder.com/600x400",
-    thumb_image: "https://via.placeholder.com/350x200"
+    main_image: "https://via.placeholder.com/600x400.png?text=Portfolio+Image",
+    thumb_image: "https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail"
     )
 end
 
-puts "9 portfolio items created"
+puts "#{count} portfolio items created"

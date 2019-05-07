@@ -64,4 +64,6 @@ gem "ruby-debug-ide", "~> 0.6.1", :group => :development
 
 gem "sassc-rails", "~> 2.1", :group => :development
 
+gem "fastri", "~> 0.3.1", :group => :development
+
 gem "debase", "~> 0.2.2"

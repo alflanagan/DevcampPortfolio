@@ -27,3 +27,8 @@ Layout/IndentationConsistency:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: 'when_needed'
 
+Bundler/OrderedGems:
+  TreatCommentsAsGroupSeparators: false
+
+Style/SymbolArray:
+  EnforcedStyle: 'brackets'

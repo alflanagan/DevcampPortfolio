@@ -5,7 +5,7 @@
 <%= link_to 'Create New Item', new_portfolio_path %>
 
 <% @items.each do |item| %>
-  <p><%= link_to item.title, portfolio_path(item) %></p>
+  <p><%= link_to item.title, portfolio_show_path(item) %></p>
   <p><%= item.subtitle %></p>
   <p><%= item.body %></p>
   <%= image_tag item.thumb_image unless item.thumb_image.nil? %>

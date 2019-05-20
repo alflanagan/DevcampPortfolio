@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -22,6 +24,8 @@ gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+gem 'friendly_id', '~> 5.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -36,7 +40,7 @@ group :development do
   gem 'ruby-debug-ide', '~> 0.6.1'
   gem 'ruby-lint', '~> 2.3'
   gem 'sassc-rails', '~> 2.1'
-  gem 'solargraph', '~> 0.32.2'
+  gem 'solargraph', '~> 0.32'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 count = 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+    body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem
     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
     ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
     explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
@@ -13,7 +15,7 @@ count = 10.times do |blog|
     corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
     nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-    nulla pariatur?"
+    nulla pariatur?'
   )
 end
 
@@ -31,16 +33,16 @@ puts "#{count} skills created"
 count = 9.times do |item|
   Portfolio.create!(
     title: "Portfolio Title #{item}",
-    subtitle: "My great service",
-    body: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+    subtitle: 'My great service',
+    body: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero
     tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
     id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-    non recusandae.",
-    main_image: "https://via.placeholder.com/600x400.png?text=Portfolio+Image",
-    thumb_image: "https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail"
-    )
+    non recusandae.',
+    main_image: 'https://via.placeholder.com/600x400.png?text=Portfolio+Image',
+    thumb_image: 'https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail'
+  )
 end
 
 puts "#{count} portfolio items created"

@@ -1,5 +1,7 @@
-class PortfoliosController < ApplicationController
+# frozen_string_literal: true
 
+# Controller for the portfolios model.
+class PortfoliosController < ApplicationController
   def index
     @items = Portfolio.all
   end
@@ -16,7 +18,7 @@ class PortfoliosController < ApplicationController
     @item = Portfolio.find(params[:id])
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_path, notice: "Portfolio '#{@item.title}' was removed."}
+      format.html { redirect_to portfolios_path, notice: "Portfolio '#{@item.title}' was removed." }
     end
   end
 

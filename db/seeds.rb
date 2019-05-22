@@ -49,8 +49,6 @@ count = 8.times do |item|
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
     non recusandae.',
-    main_image: 'https://via.placeholder.com/600x400.png?text=Portfolio+Image',
-    thumb_image: 'https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail'
   )
 end
 
@@ -64,8 +62,6 @@ count += 1.times do |item|
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
     non recusandae.',
-    main_image: 'https://via.placeholder.com/600x400.png?text=Portfolio+Image',
-    thumb_image: 'https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail'
   )
 end
 

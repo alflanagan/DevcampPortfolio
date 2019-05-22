@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+count = 3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+  )
+end
+
+puts "#{count} topics created"
+
 count = 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
@@ -15,7 +23,8 @@ count = 10.times do |blog|
     corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
     nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-    nulla pariatur?'
+    nulla pariatur?',
+    topic_id: Topic.last.id
   )
 end
 
@@ -30,10 +39,25 @@ end
 
 puts "#{count} skills created"
 
-count = 9.times do |item|
+count = 8.times do |item|
   Portfolio.create!(
     title: "Portfolio Title #{item}",
-    subtitle: 'My great service',
+    subtitle: 'Ruby on Rails',
+    body: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+    tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+    id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
+    dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
+    rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
+    non recusandae.',
+    main_image: 'https://via.placeholder.com/600x400.png?text=Portfolio+Image',
+    thumb_image: 'https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail'
+  )
+end
+
+count += 1.times do |item|
+  Portfolio.create!(
+    title: "Portfolio Title #{item}",
+    subtitle: 'Angular',
     body: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero
     tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
     id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis

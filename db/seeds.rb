@@ -66,3 +66,12 @@ count += 1.times do |item|
 end
 
 puts "#{count} portfolio items created"
+
+count = 3.times do |technology|
+  Portfolio.last.technologies.create(
+    name: "Technology #{technology}",
+    portfolio_id: Portfolio.last.id
+  )
+end
+
+puts "#{count} technologies created"

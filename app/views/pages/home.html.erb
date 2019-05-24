@@ -1,4 +1,4 @@
-<h1>Homepage</h1>
+<h1>Hi, <%= current_user.first_name if current_user %></h1>
 <h3>Blog Posts</h3>
 <% for post in @posts %>
 <p><em><%= post.title %><em></p>
@@ -7,4 +7,3 @@
 <% for skill in @skills %>
 <p><%= skill.title %> (<%= skill.percent_used %>%)</p>
 <% end %>
-

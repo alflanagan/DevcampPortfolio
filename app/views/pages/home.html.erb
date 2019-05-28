@@ -1,9 +1,11 @@
 <h1>Hi, <%= current_user.first_name %></h1>
+
 <h3>Blog Posts</h3>
+
 <% for post in @posts %>
-<p><em><%= post.title %><em></p>
+  <p><em><%= post.title %><em></p>
 <% end %>
 <h3>Skills</h3>
 <% for skill in @skills %>
-<p><%= skill.title %> (<%= skill.percent_used %>%)</p>
+  <p><%= skill.title %> (<%= skill.percent_used %>%)</p>
 <% end %>

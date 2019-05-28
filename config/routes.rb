@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+  get 'blog/:id', to: 'blogs#show', as: 'blog_show'
 
   root to: 'pages#home'
 end

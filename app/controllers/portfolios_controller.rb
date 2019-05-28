@@ -2,6 +2,8 @@
 
 # Controller for the portfolios model.
 class PortfoliosController < ApplicationController
+  layout 'portfolio'
+
   def index
     @items = Portfolio.all
   end

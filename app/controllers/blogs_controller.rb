@@ -8,11 +8,16 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @page_title = 'My Portfolio Blog'
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show; end
+  def show
+    @page_title = @blog.title
+    # add keywords as field in blog model
+    @seo_keywords = @blog.body
+  end
 
   # GET /blogs/new
   def new

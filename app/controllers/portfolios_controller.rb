@@ -5,35 +5,35 @@ class PortfoliosController < ApplicationController
   layout 'portfolio'
 
   def index
-    @items = Portfolio.all
+    @portfolio_items = Portfolio.all
   end
 
   def angular
-    @items = Portfolio.angular
+    @portfolio_items = Portfolio.angular
   end
 
   def new
-    @item = Portfolio.new
-    3.times { @item.technologies.build }
+    @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def show
-    @item = Portfolio.find(params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   def destroy
-    @item = Portfolio.find(params[:id])
-    @item.destroy
+    @portfolio_item = Portfolio.find(params[:id])
+    @portfolio_item.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_path, notice: "Portfolio '#{@item.title}' was removed." }
+      format.html { redirect_to portfolios_path, notice: "Portfolio '#{@portfolio_item.title}' was removed." }
     end
   end
 
   def create
-    @item = Portfolio.new(portfolio_params)
+    @portfolio_item = Portfolio.new(portfolio_params)
 
     respond_to do |format|
-      if @item.save
+      if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
       else
         format.html { render :new }
@@ -42,14 +42,14 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-    @item = Portfolio.find(params[:id])
-    3.times { @item.technologies.build }
+    @portfolio_item = Portfolio.find(params[:id])
+    3.times { @portfolio_item.technologies.build }
   end
 
   def update
-    @item = Portfolio.find(params[:id])
+    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
-      if @item.update(portfolio_params)
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
       else
         format.html { render :edit }

@@ -57,13 +57,30 @@ install_node () {
 
 export -f install_node
 
+setup_postgres () {
+  #### required RPMs
+  PSQL_RPMS="postgresql postgresql-libs postgresql-contrib postgresql-devel postgresql-server"
+  #### get RPMS
+  # shellcheck disable=SC2086
+  ${DNF} install -y ${PSQL_RPMS} || exit_with_error "${DNF} install of PostgresSQL failed!" 4
+
+  #### init data directories
+  runuser postgres -c "postgresql-setup initdb"
+
+  systemctl enable postgresql
+
+  systemctl start postgresql
+
+  echo "************ Completed $(basename $0) ******************"
+}
+
 #### get RPMS
 # shellcheck disable=SC2086
 ${DNF} install -y ${RUBY_BUILD_DEPS} || exit_with_error "${DNF} install of package failed!" 4
 
 ${DNF} install -y ${OTHER_DEPS} || exit_with_error "Can't install a dependency!" 5
 
-${DEST}/vagrant/setup_postgres.sh
+setup_postgres
 
 #### user-side setup
 create_rvm_user ${ADMIN_USER}
@@ -96,6 +113,7 @@ git_script=$(cat <<-GIT
     git clone ${SOURCE} || exit_with_error "Failure cloning repository from ${SOURCE}" 7
   fi
   cd "${DEST}" || exit_with_error "Directory ${DEST} not created!"
+  git checkout view
   gem install bundler -v '< 2'
   ${BUNDLE} install --deployment --without=development
 GIT

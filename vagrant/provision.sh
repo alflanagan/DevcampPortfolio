@@ -79,6 +79,7 @@ clone_repo () {
   echo "provision: ${FUNCNAME[0]} entered as ${USER}"
   local SOURCE=https://github.com/alflanagan/DevcampPortfolio.git
   local DEST=/home/${ADMIN_USER}/build/DevcampPortfolio
+  local BRANCH=view
 
   cd
   . ~/.rvm/scripts/rvm
@@ -89,7 +90,8 @@ clone_repo () {
     git clone ${SOURCE} || exit_with_error "Failure cloning repository from ${SOURCE}" 7
   fi
   cd "${DEST}" || exit_with_error "Directory ${DEST} not created!"
-  git checkout view
+  git checkout ${BRANCH}
+  echo "${FUNCNAME[0]} using ruby version $(ruby -v)"
   gem install bundler -v '< 2'
   ${BUNDLE} install --deployment --without=development
   local ERR=$?

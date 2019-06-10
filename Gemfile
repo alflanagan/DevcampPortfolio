@@ -24,10 +24,10 @@ gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+# user authentication
+gem 'devise', '~> 4.6'
 # use slugs instead of integers to identify posts
 gem 'friendly_id', '~> 5.2'
-# user authentication
-gem "devise", "~> 4.6"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

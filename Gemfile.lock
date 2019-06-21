@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/alflanagan/a_flanagan_view_tool.git
+  revision: bb2e3a7974a416e4584e7f28178abf896b78c76c
+  specs:
+    a_flanagan_view_tool (0.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,8 +52,8 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.6.0)
       execjs
-    backport (1.0.0)
-    bcrypt (3.1.12)
+    backport (1.1.1)
+    bcrypt (3.1.13)
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -69,7 +75,7 @@ GEM
     crass (1.0.4)
     debase (0.2.2)
       debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.4)
+    debase-ruby_core_source (0.10.5)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -79,7 +85,7 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     fastri (0.3.1.1)
-    ffi (1.10.0)
+    ffi (1.11.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     globalid (0.4.2)
@@ -87,7 +93,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.2)
+    jaro_winkler (1.5.3)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jquery-rails (4.3.5)
@@ -111,7 +117,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    msgpack (1.2.10)
+    msgpack (1.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -180,7 +186,7 @@ GEM
     ruby-lint (2.3.1)
       parser (~> 2.2)
       slop (~> 3.4, >= 3.4.7)
-    ruby-progressbar (1.10.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -196,15 +202,15 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
-    sassc-rails (2.1.1)
+    sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
       sprockets (> 3.0)
       sprockets-rails
       tilt
     slop (3.6.0)
-    solargraph (0.32.3)
-      backport (~> 1.0)
+    solargraph (0.33.2)
+      backport (~> 1.1)
       bundler (>= 1.17.2)
       htmlentities (~> 4.3, >= 4.3.4)
       jaro_winkler (~> 1.5)
@@ -215,8 +221,7 @@ GEM
       thor (~> 0.19, >= 0.19.4)
       tilt (~> 2.0)
       yard (~> 0.9)
-    spring (2.0.2)
-      activesupport (>= 4.2)
+    spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -245,15 +250,16 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    websocket-driver (0.7.0)
+    websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.3)
+    websocket-extensions (0.1.4)
     yard (0.9.19)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  a_flanagan_view_tool!
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3)
   byebug

@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"ruby.pathToBundler": "bin/bundle",
+		"ruby.useLanguageServer": true,
+		"ruby.interpreter.commandPath": "/home/aflanagan/.rvm/rubies/ruby-2.6.3/bin/ruby",
+		"ruby.codeCompletion": "rcodetools",
+		"ruby.lint": {
+			"ruby": {
+				"unicode": true //Runs ruby -wc -Ku
+			},
+			"rubocop": {
+				"lint": true,
+				"rails": true
+			},
+			"ruby-lint": true
+		},
+
+		// Time (ms) to wait after keypress before running enabled linters. Ensures
+		// linters are only run when typing has finished and not for every keypress
+		"ruby.lintDebounceTime": 500,
+		"files.trimFinalNewlines": true,
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+		"editor.tabSize": 2,
+	}
+}

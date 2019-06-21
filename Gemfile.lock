@@ -1,12 +1,7 @@
-GIT
-  remote: https://github.com/alflanagan/a_flanagan_view_tool.git
-  revision: bb2e3a7974a416e4584e7f28178abf896b78c76c
-  specs:
-    a_flanagan_view_tool (0.1.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    a_flanagan_view_tool (0.1.2)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -259,7 +254,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  a_flanagan_view_tool!
+  a_flanagan_view_tool (~> 0.1.2)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3)
   byebug

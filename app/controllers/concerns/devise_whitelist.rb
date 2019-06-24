@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# whitelist for parameters sent to devise
 module DeviseWhitelist
   extend ActiveSupport::Concern
 

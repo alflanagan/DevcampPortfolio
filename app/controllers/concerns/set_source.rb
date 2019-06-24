@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Set session variable :source from URL params
 module SetSource
   extend ActiveSupport::Concern
 

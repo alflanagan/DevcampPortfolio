@@ -48,7 +48,7 @@ count = 8.times do |item|
     id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-    non recusandae.',
+    non recusandae.'
   )
 end
 
@@ -61,7 +61,7 @@ count += 1.times do |item|
     id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
     dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
     rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-    non recusandae.',
+    non recusandae.'
   )
 end
 

@@ -13,17 +13,15 @@
   </head>
 
   <body class="text-center">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <%= render 'shared/nav', location: 'top' %>
+      <%= render 'shared/application_nav', location: 'top' %>
 
-    <%= login_helper %>
+      <%= yield %>
 
-    <%= yield %>
+      <%= copyright_generator %>
 
-    <%= copyright_generator %>
-
-    <%= source_helper :application %>
+      <%= source_helper :application %>
+    </div>
   </body>
 </html>

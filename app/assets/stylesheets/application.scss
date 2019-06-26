@@ -119,3 +119,13 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+@media (min-width: 768px) {
+  .address {
+    margin-top: 100px;
+  }
+}
+
+#contact_page a {
+  color: lightblue;
+}

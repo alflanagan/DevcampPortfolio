@@ -109,3 +109,13 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+.mastfoot .tech-note {
+  font-size: 0.75rem;
+  border-width: 1px;
+  border-color: #595959;
+  border-style: solid;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}

@@ -9,6 +9,7 @@ AllCops:
     - '.git/**/*'
     - 'solargraph/*'
     - 'db/schema.rb'
+    - 'bootstrap*/**/*'
 
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https

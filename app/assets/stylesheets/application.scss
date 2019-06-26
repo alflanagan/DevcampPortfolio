@@ -110,6 +110,10 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
+/*
+ * Custom Styles
+ */
+
 .mastfoot .tech-note {
   font-size: 0.75rem;
   border-width: 1px;
@@ -128,4 +132,13 @@ body {
 
 #contact_page a {
   color: lightblue;
+}
+
+.card-body {
+  color: black;
+  text-align: left;
+}
+
+.auth-links a {
+  color: black;
 }

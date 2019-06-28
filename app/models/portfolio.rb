@@ -19,6 +19,6 @@ class Portfolio < ApplicationRecord
     # self.main_image ||= 'https://via.placeholder.com/600x400.png?text=Portfolio+Image'
     # self.thumb_image ||='https://via.placeholder.com/350x200.png?text=Portfolio+Thumbnail'
     self.main_image ||= Placeholder.image_generate(height: 600, width: 400)
-    self.thumb_image ||= Placeholder.image_generate(height: 350, width: 200)
+    self.thumb_image ||= Placeholder.image_generate(height: 250, width: 308)
   end
 end

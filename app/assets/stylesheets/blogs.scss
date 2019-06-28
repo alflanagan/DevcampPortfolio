@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
 /* stylelint-disable selector-list-comma-newline-after */
@@ -141,4 +143,18 @@ h6 {
 
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.blog-footer .tech-note {
+  font-size: 0.75rem;
+  border-width: 1px;
+  border-color: #595959;
+  border-style: solid;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.social-links {
+  font-size: 2.5rem;
 }

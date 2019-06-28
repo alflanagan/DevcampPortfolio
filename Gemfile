@@ -62,3 +62,7 @@ gem 'jquery-rails', '~> 4.3'
 gem 'a_flanagan_view_tool', '~> 0.1.2'
 
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
+gem 'font-awesome-sass', '~> 5.8'
+
+gem 'kaminari', '~> 1.1', '>= 1.1.1'

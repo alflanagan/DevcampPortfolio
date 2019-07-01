@@ -33,7 +33,7 @@ module ApplicationHelper
   end
 
   def nav_helper(style = 'nav-link', tag_type = 'span')
-    result = ''
+    result = ''.dup # thawed
     nav_items.each do |item|
       link_text = link_to item[:title], item[:url], class: "#{style} #{active? item[:url]}"
       result << "<#{tag_type}>#{link_text}</#{tag_type}>\n"

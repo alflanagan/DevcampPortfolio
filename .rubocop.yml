@@ -30,7 +30,7 @@ Style/Documentation:
     - 'config/application.rb'
 
 Layout/IndentationConsistency:
-  EnforcedStyle: 'rails'
+  EnforcedStyle: 'indented_internal_methods'
 
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: false
@@ -39,7 +39,7 @@ Style/SymbolArray:
   EnforcedStyle: 'brackets'
 
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: 'when_needed'
+  EnforcedStyle: 'always'
   Exclude:
     - 'db/migrate/**/*'
 

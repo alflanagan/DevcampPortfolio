@@ -30,7 +30,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 
 body {
@@ -156,4 +155,40 @@ body {
 
 .app-nav span:nth-child(1) {
   margin-left: 0;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('david-moum-nbqlWhOVu6k-unsplash.jpg') no-repeat;
+  background-size: cover;
+}
+
+#bkgnd-image-credit {
+  font-size: .6rem;
+}
+
+#bkgnd-image-credit a {
+  background-color:black;
+  color:white;
+  text-decoration:none;
+  padding:4px 6px;
+  font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  line-height:1.2;
+  display:inline-block;
+  border-radius:3px;
+}
+
+.app-footer {
+  color: white;
 }

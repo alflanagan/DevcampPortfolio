@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Portfolio < ApplicationRecord
-  has_many :technologies
+  has_many :technologies, inverse_of: :portfolio
   accepts_nested_attributes_for :technologies,
+                                allow_destroy: true,
                                 reject_if: ->(attributes) { attributes['name'].blank? }
 
   validates_presence_of :title, :body

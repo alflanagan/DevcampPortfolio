@@ -27,7 +27,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def show; end
@@ -52,9 +51,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit
-    3.times { @portfolio_item.technologies.build }
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -78,6 +75,7 @@ class PortfoliosController < ApplicationController
                                         :body,
                                         :main_image,
                                         :thumb_image,
-                                        technologies_attributes: [:name])
+                                        # :_destroy is special value for cocoon
+                                        technologies_attributes: [:id, :name, :_destroy])
     end
 end

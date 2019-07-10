@@ -14,7 +14,8 @@
 
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <%= video_tag(
+      <div id="background"></div>
+      <!-- <%%= video_tag(
         'HardDrivePhotojpeg.mp4',
         id: 'background',
         autoplay: true,
@@ -22,12 +23,14 @@
         muted: true,
         poster: 'david-moum-nbqlWhOVu6k-unsplash.jpg'
       )
-      %>
+      %> -->
       <%= render 'shared/application_nav', location: 'top' %>
 
       <%= yield %>
 
       <%= render 'shared/application_footer' %>
+
+      <%= render 'shared/alerts' %>
 
       <%= source_helper :application %>
     </div>

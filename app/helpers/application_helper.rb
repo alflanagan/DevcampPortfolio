@@ -33,12 +33,19 @@ module ApplicationHelper
   end
 
   def nav_helper(style = 'nav-link', tag_type = 'span')
-    result = ''.dup # thawed
+    result = +'' # thawed
     nav_items.each do |item|
       link_text = link_to item[:title], item[:url], class: "#{style} #{active? item[:url]}"
       result << "<#{tag_type}>#{link_text}</#{tag_type}>\n"
     end
     result.html_safe
+  end
+
+  # display a gritter message to the user
+  # if message is not provided, displays flash notice if one is found
+  def alerts(message = nil)
+    message = flash[:alert] || flash[:error] || flash[:notice] if message.nil?
+    js add_gritter(message, title: 'A Lloyd Flanagan Website') if message
   end
 
   private

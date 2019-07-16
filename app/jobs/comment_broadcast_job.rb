@@ -6,7 +6,8 @@ class CommentBroadcastJob < ApplicationJob
 
   def perform(comment)
     # create channel for this blog
-    ActionCable.server.broadcast "blogs_#{comment.blog.id}_channel", comment: render_comment(comment)
+    ActionCable.server.broadcast "blogs_#{comment.blog.id}_channel",
+                                 comment: render_comment(comment)
   end
 
   private

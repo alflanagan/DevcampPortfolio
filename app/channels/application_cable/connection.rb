@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationCable
+  # connection to provide applicable user for jobs
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
 

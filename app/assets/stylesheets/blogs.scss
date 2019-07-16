@@ -140,6 +140,7 @@ h6 {
   text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
+  margin-top: 20px;
 }
 
 .blog-footer p:last-child {
@@ -162,4 +163,22 @@ h6 {
 
 .app-nav a.active.text-muted {
   border-bottom: .15rem solid #6c757d;
+}
+
+#comments {
+  margin-bottom: 20px;
+}
+
+.comment-card > .card {
+  margin-top: 15px;
+}
+
+.comment-card > .card .col-md-11 {
+  padding-left: 30px;
+}
+
+.comment-card > .card .comment-attribution {
+  padding-left: 20px;
+  font-size: .8rem;
+  font-style: italic;
 }

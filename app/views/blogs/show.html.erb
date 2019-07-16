@@ -16,6 +16,13 @@
     <p>
       <%= @blog.body %>
     </p>
+    <!-- comment form -->
+    <%= render 'comments/comment_form' %>
+
+    <div id="comments" data-blog-id="<%= @blog.id %>">
+      <%= render @blog.comments %>
+    </div>
+
     <div class="row">
       <div class="col">
         <a href="#" class="btn btn-secondary">Back to top</a>

@@ -58,3 +58,9 @@ Style/StringLiterals:
 Layout/EmptyLines:
   Exclude:
     - 'db/migrate/**/*'
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/Lambda:
+  EnforcedStyle: literal

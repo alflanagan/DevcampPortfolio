@@ -44,7 +44,6 @@ group :development do
   gem 'ruby-debug-ide', '~> 0.7'
   gem 'ruby-lint', '~> 2.3'
   gem 'sassc-rails', '~> 2.1'
-  gem 'solargraph', '~> 0.32'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -80,3 +79,5 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.4'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 
 gem 'gritter', '~> 1.2'
+
+gem 'redis', '~> 4.1', '>= 4.1.2'

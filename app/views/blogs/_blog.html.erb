@@ -1,4 +1,4 @@
-<div class="blog-post">
+<div class="blog-post card" id="blog-post-<%= blog.id %>">
   <%= link_to blog.topic.title, topic_path(blog.topic.id) %>
   <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
   <p class="blog-post-meta">Published <%= blog.created_at.strftime('%B %d, %Y') %></p>
@@ -10,6 +10,15 @@
     </p>
   <% end %>
   <p>
-    <%= blog.body %>
+    <div class="blog-body"></div>
   </p>
-</div><!-- /.blog-post -->
+</div>
+<!-- /.blog-post -->
+<script>
+  (function () {
+    const raw_md = `<%= blog.body.gsub('`', "\\\\`") %>`
+    const rendered = $(window.markdownit().render(raw_md))
+    const body_elem = $('#blog-post-<%= blog.id %> .blog-body')
+    body_elem.append(rendered)
+  })()
+</script>

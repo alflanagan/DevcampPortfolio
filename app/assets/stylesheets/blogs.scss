@@ -182,6 +182,12 @@ h6 {
   font-size: .8rem;
   font-style: italic;
 }
+
 .ace_editor {
   min-height: 600px;
+}
+
+.index .blog-post .blog-body {
+  max-height: 150px;
+  overflow: hidden;
 }

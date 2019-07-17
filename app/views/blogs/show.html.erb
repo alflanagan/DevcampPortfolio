@@ -1,36 +1,50 @@
-<% if logged_in? :site_admin %>
-  <div class="row mb-3">
-    <div class="col">
-        <%= link_to 'Write a New Blog', new_blog_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-<% end %>
-<div class="row">
-  <div class="col-md-8">
-    <div>
-      Topic: <%= link_to @blog.topic.title, topic_path(@blog.topic.id) %>
-    </div>
-    <h1><%= @blog.title %>
-      <% if logged_in?(:site_admin) %>
-        <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-primary ml-3" %>
-      <% end %>
-    </h1>
-    <p><%= @blog.created_at.strftime '%B %d, %Y' %> (Updated <%= @blog.updated_at.strftime '%B %d, %Y' %>)</p>
-    <p>
-      <%= @blog.body %>
-    </p>
-    <!-- comment form -->
-    <%= render 'comments/comment_form' %>
-
-    <div id="comments" data-blog-id="<%= @blog.id %>">
-      <%= render @blog.comments %>
-    </div>
-
-    <div class="row">
+<div class="container">
+  <% if logged_in? :site_admin %>
+    <div class="row mb-3">
       <div class="col">
-        <a href="#" class="btn btn-secondary">Back to top</a>
+          <%= link_to 'Write a New Blog', new_blog_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+    <div class="row">
+      <div class="col-md-8">
+        <div>
+          Topic: <%= link_to @blog.topic.title, topic_path(@blog.topic.id) %>
+        </div>
+        <h1><%= @blog.title %>
+          <% if logged_in?(:site_admin) %>
+            <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-primary ml-3" %>
+          <% end %>
+        </h1>
+        <p><%= @blog.created_at.strftime '%B %d, %Y' %> (Updated <%= @blog.updated_at.strftime '%B %d, %Y' %>)</p>
+        <div class="card p-2">
+          <div id="blog_body"></div>
+        </div>
+        <hr>
+        <h3>Comments</h3>
+        <div class="card" style="padding: 2rem; margin-top: 40px;">
+          <!-- comment form -->
+          <%= render 'comments/comment_form' %>
+
+          <div id="comments" data-blog-id="<%= @blog.id %>">
+            <%= render @blog.comments %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <a href="#" class="btn btn-secondary">Back to top</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= render 'shared/blog_sidebar', locals: {topic_list: @topic_list} %>
       </div>
     </div>
   </div>
-  <%= render 'shared/blog_sidebar', locals: {topic_list: @topic_list} %>
 </div>
+<script>
+  (function () {
+    const raw_md = `<%= @blog.body.gsub('`', "\\\\`") %>`
+    $('#blog_body').append(window.markdownit().render(raw_md))
+  })()
+</script>

@@ -20,5 +20,6 @@
 //= require cocoon
 //= require gritter
 //= require cable
+//= require ace-rails-ap
 //= require turbolinks
 //= require_tree .

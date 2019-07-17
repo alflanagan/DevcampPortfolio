@@ -60,24 +60,37 @@ gem 'jquery-rails', '~> 4.3'
 
 gem 'a_flanagan_view_tool', '~> 0.1.2'
 
+# User authentication and authorization
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+# include font awesome icons
 gem 'font-awesome-sass', '~> 5.8'
 
+# pagination for blog posts, etc.
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
+# support for uploading files
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
+# image manipulation
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 
+# store uploaded files on AWS S3
 gem 'carrierwave-aws', '~> 1.3'
 
+# support for autoloading .env files
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.4'
 
+# nested forms
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 
+# fancy pop-up fading notifications
 gem 'gritter', '~> 1.2'
 
+# in-memory database
 gem 'redis', '~> 4.1', '>= 4.1.2'
+
+# Ace editor with markdown support
+gem 'ace-rails-ap', '~> 4.2'

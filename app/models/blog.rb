@@ -19,4 +19,8 @@ class Blog < ApplicationRecord
   def self.featured
     limit(2)
   end
+
+  def self.with_topic(topic_id)
+    where(topic_id: topic_id)
+  end
 end

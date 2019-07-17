@@ -13,6 +13,9 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.page(params[:page]).per(5)
     @page_title = 'Assorted Musings - Blog by A Lloyd Flanagan'
+
+    @topic_list = topic_list
+
   end
 
   # GET /blogs/1
@@ -24,21 +27,27 @@ class BlogsController < ApplicationController
     @page_title = @blog.title
     # add keywords as field in blog model
     @seo_keywords = @blog.body
+
+    @topic_list = topic_list
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @topic_list = topic_list
   end
 
   # GET /blogs/1/edit
-  def edit; end
+  def edit
+    @blog = Blog.find(id: params[:id])
+    @topic_list = topic_list
+  end
 
   # POST /blogs
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
+    @topic_list = topic_list
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -89,5 +98,16 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body, :topic_id)
+    end
+
+    def topic_list
+      the_list = {}
+      Topic.published.each do |topic|
+        the_list[topic] = []
+        topic.blogs.each do |blog|
+          the_list[topic] << blog
+        end
+      end
+      the_list
     end
 end

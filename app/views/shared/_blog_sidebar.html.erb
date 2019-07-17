@@ -18,4 +18,35 @@
       <li><a href="https://www.linkedin.com/in/alloydflanagan"><%= icon('fab', 'linkedin', class: 'strong') %></a></li>
     </ol>
   </div>
+
+  <div class="accordion" id="topic_ul">
+    <% @topic_list.each do |topic, blogs| %>
+      <div class="card">
+        <div class="card-header" id="heading_<%= topic.id %>">
+          <h2 class="mb-0">
+            <button class="btn btn-link"
+              type="button"
+              data-toggle="collapse"
+              data-target="#topic_<%= topic.id %>"
+              aria-expanded="false"
+              aria-controls="topic_<%= topic.id %>">
+            Blogged about: <%= topic.title %></button>
+          </h2>
+        </div>
+        <div class="collapse"
+             id="topic_<%= topic.id %>"
+             aria-labelled-by="heading_<%= topic.id %>"
+             data-parent="#topic_ul">
+          <div class="card-body">
+            <ul>
+              <% blogs.each do |blog| %>
+                <li><%= link_to blog.title, blog_path(blog.id) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </aside><!-- /.blog-sidebar -->

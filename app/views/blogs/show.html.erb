@@ -44,7 +44,7 @@
 </div>
 <script>
   (function () {
-    const raw_md = `<%= @blog.body.gsub('`', "\\\\`") %>`
-    $('#blog_body').append(window.markdownit().render(raw_md))
+    const raw_md = <%= make_js_template @blog.body %>
+    window.render_md(raw_md, '#blog_body')
   })()
 </script>

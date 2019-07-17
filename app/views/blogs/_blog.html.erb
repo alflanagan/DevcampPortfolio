@@ -16,9 +16,8 @@
 <!-- /.blog-post -->
 <script>
   (function () {
-    const raw_md = `<%= blog.body.gsub('`', "\\\\`") %>`
-    const rendered = $(window.markdownit().render(raw_md))
-    const body_elem = $('#blog-post-<%= blog.id %> .blog-body')
-    body_elem.append(rendered)
+    const raw_md = <%= make_js_template blog.body %>
+    const selector = '#blog-post-<%= blog.id %> .blog-body'
+    window.render_md(raw_md, selector)
   })()
 </script>

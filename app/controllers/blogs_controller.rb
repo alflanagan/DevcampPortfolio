@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-    @blog = Blog.find(id: params[:id])
+    @blog = Blog.friendly.find(params[:id])
     @topic_list = topic_list
   end
 

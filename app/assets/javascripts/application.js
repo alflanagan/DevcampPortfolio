@@ -21,5 +21,7 @@
 //= require gritter
 //= require cable
 //= require ace-rails-ap
+//= require ace/theme-github
+//= require ace/mode-markdown
 //= require turbolinks
 //= require_tree .

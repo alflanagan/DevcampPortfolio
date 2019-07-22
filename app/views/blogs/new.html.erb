@@ -18,31 +18,3 @@
     </div>
   </div>
 </div>
-<script>
-  (function () {
-    const title_in = $('#blog_title')
-    const title_pre = $('#preview-title')
-    const body_pre = $('#preview-body')
-    title_in.on('input', function () {
-      const new_val = title_in.val()
-      if (new_val === '') {
-        title_pre.text('')
-        title_pre.append($('<span style="font-style: italic; color: lightgrey;">Entry Title</span>'))
-      } else {
-        title_pre.text(new_val)
-      }
-    })
-
-    const editor = ace.edit("blog_body")
-    const md = window.markdownit()
-
-    editor.setTheme("ace/theme/github")
-    editor.session.setMode("ace/mode/markdown")
-    const doc = editor.session.getDocument()
-    doc.on('change', function(delta) {
-      const result = $(md.render(doc.getValue()))
-      body_pre.children().detach()
-      body_pre.append(result)
-    })
-  }).call()
-</script>

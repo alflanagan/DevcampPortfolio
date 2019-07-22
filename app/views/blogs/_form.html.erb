@@ -3,6 +3,8 @@
 
 $.when($.ready).then(function (e) {
   $('#status-button').on('click', toggle_status_button)
+  $('#submit-button').on('click', on_save_document)
+  setup_editor()
 })
 </script>
 
@@ -22,10 +24,10 @@ $.when($.ready).then(function (e) {
   <div class="form-group">
     <button id="status-button"
             type="button"
-            name="button[status]"
             class="btn btn-outline-primary">
     Draft
     </button>
+    <input type="hidden" id="blog_status" name="blog[status]" value="draft">
   </div>
 
   <div class="form-group">

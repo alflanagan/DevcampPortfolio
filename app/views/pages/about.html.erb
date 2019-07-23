@@ -1,15 +1,36 @@
-<h1>About Me</h1>
+<% if logged_in? :site_admin %>
+  <div class="row">
+    <div class="col">
+      <button id="font-toggle-button" role="button" class="btn btn-primary">
+      Try Another Font</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p id="font-name-display">'Cantata One', serif</p>
+    </div>
+  </div>
+<% end %>
+<h1 class="major-heading">About Me</h1>
 <hr>
 <div class="row">
   <div class="col-md-4">
     <%= image_tag 'profile.jpg',
         width: '100%', alt: 'A Lloyd Flanagan Headshot' %>
   </div>
-  <div class='col-md-8'>
-
-    <p>I&rsquo;m a professional full-stack developer residing in Richmond, Virginia. I&rsquo;m
-     experienced in the <a href="https://djangoproject.com/">Django</a> content-management
-     system. This site, however, is powered by <a href="https://ruby-rails.org">Ruby on Rails</a>,
-     as I&rsquo;m learning that system currently through an online course.</p>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">I&rsquo;m a professional full-stack developer residing in Richmond, Virginia. I&rsquo;m
+        experienced in the <a href="https://djangoproject.com/">Django</a> content-management
+        system. This site, however, is powered by <a href="https://ruby-rails.org">Ruby on Rails</a>,
+        as I&rsquo;m learning that system currently through an online course.</p>
+      </div>
+    </div>
   </div>
 </div>
+<script>
+$.when($.ready).then(function (e) {
+  $('#font-toggle-button').on('click', toggle_current_font)
+})
+</script>

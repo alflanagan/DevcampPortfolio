@@ -1,3 +1,13 @@
+<script>
+// probably can do this with coffeescript...
+
+$.when($.ready).then(function (e) {
+  $('#status-button').on('click', toggle_status_button)
+  $('#submit-button').on('click', on_save_document)
+  setup_editor()
+})
+</script>
+
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
     <% blog.errors.full_messages.each do |error| %>
@@ -9,6 +19,15 @@
     <%= form.text_field :title,
                         class: 'form-control',
                         placeholder: 'Title' %>
+  </div>
+
+  <div class="form-group">
+    <button id="status-button"
+            type="button"
+            class="btn btn-outline-primary">
+    Draft
+    </button>
+    <input type="hidden" id="blog_status" name="blog[status]" value="draft">
   </div>
 
   <div class="form-group">
@@ -29,6 +48,6 @@
   </div>
 
   <div class="form-group">
-    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+    <%= form.submit 'Submit', class: 'btn btn-primary', id: 'submit-button' %>
   </div>
 <% end %>

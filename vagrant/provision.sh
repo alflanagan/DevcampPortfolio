@@ -93,13 +93,28 @@ clone_repo () {
   git checkout ${BRANCH}
   echo "${FUNCNAME[0]} using ruby version $(ruby -v)"
   gem install bundler -v '< 2'
-  ${BUNDLE} install --deployment --without=development
+  ${BUNDLE} install --deployment
   local ERR=$?
   echo "provision: ${FUNCNAME[0]} completed."
   return $ERR
 }
 
-export -f install_node install_ruby clone_repo
+setup_rails_server () {
+  local DEST=/home/${ADMIN_USER}/build/DevcampPortfolio
+  local NVM_DIR=${HOME}/.nvm
+  cd
+  . .bash_profile
+  . .bashrc
+
+  rvm use ${RVERSION}
+  nvm use ${NODE_VERSION}
+
+  cd ${DEST}
+  bin/rails db:create
+  bin/rails db:migrate
+}
+
+export -f install_node install_ruby clone_repo setup_rails_server
 
 do_as_deploy () {
   echo "provision: ${FUNCNAME[0]} entered as ${USER}"
@@ -107,6 +122,10 @@ do_as_deploy () {
   runuser ${ADMIN_USER} -c install_node
   runuser ${ADMIN_USER} -c clone_repo
   local ERR=$?
+  if [[ $ERR -eq 0 ]]; then
+    runuser ${ADMIN_USER} -c setup_rails_server
+    ERR=$?
+  fi
   echo "provision: ${FUNCNAME[0]} completed."
   return $ERR
 }
@@ -123,6 +142,7 @@ setup_postgres () {
   #### start it
   systemctl enable postgresql
   systemctl start postgresql
+
   local ERR=$?
   echo "provision: ${FUNCNAME[0]} completed."
   return $ERR

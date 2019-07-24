@@ -13,6 +13,10 @@
   body_elem = $(target_selector)
   body_elem.append(rendered)
 
+###
+  On clicking the status button, change the visible text, and update the hidden
+  input that actually stores the current state.
+###
 @toggle_status_button = () ->
   the_button = $(this)
   the_input = $('#blog_status')
@@ -25,8 +29,9 @@
 
 @on_save_document  = (e) ->
   console.log('saving')
-  $('#blog_body').text('hello')
-  doc = window.ace_editor.getDocument()
+  # put contents of editor back where rails can find it
+  editor = window.ace_editor
+  $('#blog_body').text(editor.getValue())
 
 @setup_editor = () ->
   title_in = $('#blog_title')
@@ -41,7 +46,7 @@
       title_pre.text(new_val)
   )
 
-  editor = ace.edit("blog_body")
+  editor = ace.edit("ace-editor-anchor")
   md = window.markdownit()
 
   editor.setTheme("ace/theme/github")

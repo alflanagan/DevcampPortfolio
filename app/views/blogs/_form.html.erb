@@ -31,10 +31,8 @@ $.when($.ready).then(function (e) {
   </div>
 
   <div class="form-group">
-    <%= form.text_area :body,
-                       class: 'form-control',
-                       rows: 15,
-                       placeholder: 'Content' %>
+    <div id="ace-editor-anchor"></div>
+    <%= form.text_area :body, style: 'display: none;' %>
   </div>
 
   <div class="form-group">

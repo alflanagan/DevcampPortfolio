@@ -94,3 +94,6 @@ gem 'redis', '~> 4.1', '>= 4.1.2'
 
 # Ace editor with markdown support
 gem 'ace-rails-ap', '~> 4.2'
+
+# favicon generator for multiple platforms
+gem 'rails_real_favicon', '~> 0.0.12'

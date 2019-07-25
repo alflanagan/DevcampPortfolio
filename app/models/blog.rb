@@ -16,6 +16,10 @@ class Blog < ApplicationRecord
     all
   end
 
+  def self.published_blogs
+    where(status: :published).order('created_at DESC')
+  end
+
   def self.featured
     limit(2)
   end

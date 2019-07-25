@@ -2,13 +2,7 @@
   <%= link_to blog.topic.title, topic_path(blog.topic.id) %>
   <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
   <p class="blog-post-meta">Published <%= blog.created_at.strftime('%B %d, %Y') %></p>
-  <% if logged_in? :site_admin %>
-    <p class="blog-post-meta">
-      <%= link_to blog.status.capitalize, toggle_status_blog_path(blog) %> /
-      <%= link_to 'Edit', edit_blog_path(blog) %> /
-      <%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-  <% end %>
+  <%= render "admin_blog", blog: blog %>
   <p>
     <div class="blog-body"></div>
   </p>

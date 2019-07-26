@@ -3,11 +3,13 @@
 # application-wide helper methods
 module ApplicationHelper
   def nav_items
-    [{ title: 'Home', url: root_path },
-     { title: 'About Me', url: about_me_path },
-     { title: 'Contact', url: contact_path },
-     { title: 'Blog', url: blogs_path },
-     { title: 'Portfolio', url: portfolios_path }]
+    items = [{ title: 'Home', url: root_path },
+             { title: 'About Me', url: about_me_path },
+             { title: 'Contact', url: contact_path },
+             { title: 'Blog', url: blogs_path },
+             { title: 'Portfolio', url: portfolios_path }]
+    items << { title: 'Skills', url: skills_index_path } if logged_in? :site_admin
+    items
   end
 
   # return a link to 'Logout', or two to 'Register' and 'Login', as appropriate for current user

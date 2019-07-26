@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   end
   get 'blog/:id', to: 'blogs#show', as: 'blog_show'
 
+  get 'skills', to: 'skills#index', as: 'skills_index'
+  get 'skills/:id', to: 'skills#edit', as: 'skill_edit'
+  patch 'skills/:id', to: 'skills#update', as: 'skill'
+
   mount ActionCable.server => '/cable'
 
   root to: 'pages#home'

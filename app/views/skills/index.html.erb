@@ -1,0 +1,24 @@
+<h2 id="editing-skills">Editing Skills</h2>
+
+<div class="container" id="skills-edit-form">
+  <% for skill in @skills %>
+    <div class="row" id="show_skill_<%= skill.id %>">
+      <%= render 'show', skill: skill %>
+    </div>
+    <% if logged_in? :site_admin %>
+      <div class="row edit" style="display: none;" id="edit_skill_<%= skill.id %>">
+        <div class="col"></div>
+        <%= render 'form', skill: skill %>
+        <div class="col"></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<% if logged_in? :site_admin %>
+  <script>
+    $.when($.ready).then(function (e) {
+      $('.skill-title').on('click', trigger_skill_edit)
+      $('.skill-percent').on('click', trigger_skill_edit)
+    })
+  </script>
+<% end %>

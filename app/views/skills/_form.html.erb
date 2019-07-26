@@ -1,0 +1,14 @@
+<!-- we'll display as a row. Then, if user clicks on row, we'll
+substitute an actual form -->
+  <%= form_for skill, method: :patch, local: true do |form| %>
+    <%= text_field skill, :title, class: "skill-title-edit col-4 offset-1",
+                                  name: "skill[title]",
+                                  id: "skill-title-edit-#{skill.id}" %>
+    <%# stupid browser wants to set its own width for number field... %>
+    <%= number_field skill, :percent_used, in: 5..100,
+                                           step: 5,
+                                           name: "skill[percent_used]",
+                                           id: "skill-percent-edit-#{skill.id}",
+                                           class: "skill-percent-edit col-1" %>
+    <%= submit_tag '+', class: "col-1" %>
+  <% end %>

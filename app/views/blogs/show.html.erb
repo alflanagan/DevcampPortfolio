@@ -44,7 +44,8 @@
 </div>
 <script>
   (function () {
+    "use strict"
     const raw_md = <%= make_js_template @blog.body %>
-    window.render_md(raw_md, '#blog_body')
+    Blogs.render_md(raw_md, '#blog_body')
   })()
 </script>

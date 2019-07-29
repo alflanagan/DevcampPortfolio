@@ -10,8 +10,10 @@
 <!-- /.blog-post -->
 <script>
   (function () {
+    "use strict"
+
     const raw_md = <%= make_js_template blog.body %>
     const selector = '#blog-post-<%= blog.id %> .blog-body'
-    window.render_md(raw_md, selector)
+    Blogs.render_md(raw_md, selector)
   })()
 </script>

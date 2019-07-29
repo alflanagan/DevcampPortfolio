@@ -2,9 +2,10 @@
 // probably can do this with coffeescript...
 
 $.when($.ready).then(function (e) {
-  $('#status-button').on('click', toggle_status_button)
-  $('#submit-button').on('click', on_save_document)
-  setup_editor()
+  "use strict"
+  $('#status-button').on('click', Blogs.toggle_status_button)
+  $('#submit-button').on('click', Blogs.on_save_document)
+  Blogs.setup_editor()
 })
 </script>
 

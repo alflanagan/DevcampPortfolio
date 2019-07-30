@@ -19,4 +19,8 @@ class Blog < ApplicationRecord
   def self.featured
     limit(2)
   end
+
+  def self.recent
+    order('created_at DESC')
+  end
 end

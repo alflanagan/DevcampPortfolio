@@ -7,7 +7,7 @@
 <% end %>
 <div class="row">
   <div class="col-md-8">
-    <h1><%= @blog.title %>
+    <h1 class="blog-post-title <%= @blog.status == 'draft' ? 'draft' : '' %>"><%= @blog.title %>
       <% if logged_in?(:site_admin) %>
         <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-primary ml-3" %>
       <% end %>

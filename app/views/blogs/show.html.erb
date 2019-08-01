@@ -1,5 +1,5 @@
 <% if logged_in? :site_admin %>
-  <div class="row mb-3">
+  <div class="row mb-3 mt-3">
     <div class="col">
         <%= link_to 'Write a New Blog', new_blog_path, class: "btn btn-primary" %>
     </div>
@@ -7,12 +7,22 @@
 <% end %>
 <div class="row">
   <div class="col-md-8">
-    <h1 class="blog-post-title <%= @blog.status == 'draft' ? 'draft' : '' %>"><%= @blog.title %>
-      <% if logged_in?(:site_admin) %>
-        <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-primary ml-3" %>
-      <% end %>
-    </h1>
+    <h1 class="blog-post-title <%= @blog.status == 'draft' ? 'draft' : '' %>"><%= @blog.title %></h1>
     <p><%= @blog.topic.title %></p>
+
+    <nav class="breadcrumb d-flex" aria-label="breadcrumb">
+      <%= link_to "Home", root_path, class: 'breadcrumb-item' %>
+      <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item' %>
+      <span class="breadcrumb-item active" aria-current="page"><%= @blog.title %></span>
+
+      <div class="col">
+        <span class="float-right">
+          <%= link_to icon('fas', 'pen-square'), edit_blog_path(@blog) if logged_in? :site_admin %>
+          <%= link_to icon('fas', 'trash'), @blog, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } if logged_in? :site_admin %>
+        </span>
+      </div>
+    </nav>
+
     <p><%= @blog.created_at.strftime '%B %d, %Y' %> (Updated <%= @blog.updated_at.strftime '%B %d, %Y' %>)</p>
     <p>
       <%=  markdown @blog.body %>

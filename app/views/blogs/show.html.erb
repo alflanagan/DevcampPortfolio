@@ -15,7 +15,7 @@
     <p><%= @blog.topic.title %></p>
     <p><%= @blog.created_at.strftime '%B %d, %Y' %> (Updated <%= @blog.updated_at.strftime '%B %d, %Y' %>)</p>
     <p>
-      <%= @blog.body %>
+      <%=  markdown @blog.body %>
     </p>
     <!-- comment form -->
     <%= render 'comments/comment_form' %>

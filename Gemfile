@@ -81,3 +81,9 @@ gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'gritter', '~> 1.2'
 
 gem 'redis', '~> 4.1', '>= 4.1.2'
+
+# fast ruby-based markdown parser
+gem 'redcarpet', '~> 3.5'
+
+# syntax highlighting for code blocks
+gem 'coderay', '~> 1.1', '>= 1.1.2'

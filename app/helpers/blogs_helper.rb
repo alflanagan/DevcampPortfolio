@@ -32,4 +32,8 @@ module BlogsHelper
       "<h1>Error in Markdown: #{e.message}</h1><p>#{@blog.body}</p>".html_safe
     end
   end
+
+  def blog_status_color(blog)
+    'color: red;' if blog.status == 'draft'
+  end
 end

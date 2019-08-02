@@ -196,3 +196,24 @@ h6 {
     margin: 0 10px 0 10px;
   }
 }
+
+// tweak for slightly weird case in our header
+.navbar.custom-nav .container .row .navbar-brand {
+  margin-left: 15px;
+}
+
+@media(min-width: 576px) {
+  .navbar.custom-nav .container .row .navbar-brand {
+    margin-left: 30px;
+  }
+}
+
+@media(min-width: 768px) {
+  .navbar.custom-nav .container .row .navbar-brand {
+    margin-left: 15px;
+  }
+}
+
+.navbar.custom-nav {
+  margin-bottom: 25px;
+}

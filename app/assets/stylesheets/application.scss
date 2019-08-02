@@ -135,7 +135,7 @@ body {
 }
 
 #contact_page a {
-  color: lightblue;
+  color: blue;
 }
 
 .card-body {
@@ -217,4 +217,21 @@ body {
 
 .cover-heading {
   margin-bottom: 40px;
+}
+
+.app-card-container {
+  color: black;
+
+  a,
+  a:focus,
+  a:hover {
+    color: black;
+  }
+
+  text-align: left;
+
+  .card {
+    padding: 40px;
+    background-color: rgb(230, 230, 230);
+  }
 }

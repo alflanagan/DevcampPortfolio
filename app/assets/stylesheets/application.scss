@@ -134,10 +134,6 @@ body {
   }
 }
 
-#contact_page a {
-  color: blue;
-}
-
 .card-body {
   color: black;
   text-align: left;
@@ -243,9 +239,26 @@ body {
   .card.contact-card {
     padding: 20px;
     text-align: center;
+
     h3 {
       margin-top: 30px;
       margin-bottom: 15px;
     }
   }
+}
+
+#contact_page a {
+  color: blue;
+}
+
+.skills h4 {
+  font-size: 1rem;
+}
+
+.app-card .skills .progress {
+  height: .6rem;
+}
+
+.skill {
+  margin-top: 7px;
 }

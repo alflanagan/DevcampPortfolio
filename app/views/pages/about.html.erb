@@ -8,6 +8,24 @@
                       width: '100%',
                       alt: 'A Lloyd Flanagan Headshot',
                       class: 'profile-img' %>
+
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h4><%= skill.title %></h4>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percent_used %>"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_used %>%;"
+                  >
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class='col-md-8'>
         <p>I&rsquo;m a professional full-stack developer residing in Richmond, Virginia. I&rsquo;m

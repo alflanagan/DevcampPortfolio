@@ -1,5 +1,5 @@
 <div class="app-card-container">
-  <div class="card">
+  <div class="card app-card">
     <h1>About Me</h1>
     <hr>
     <div class="row">
@@ -10,11 +10,51 @@
                       class: 'profile-img' %>
       </div>
       <div class='col-md-8'>
-
         <p>I&rsquo;m a professional full-stack developer residing in Richmond, Virginia. I&rsquo;m
          experienced in the <a href="https://djangoproject.com/">Django</a> content-management
          system. This site, however, is powered by <a href="https://ruby-rails.org">Ruby on Rails</a>,
          as I&rsquo;m learning that system currently through an online course.</p>
+        <div class="btn-group" role="group" aria-label="More Info">
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded=false
+            aria-controls="jobHistory"
+          >Job History</button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded=false
+            aria-controls="education"
+          >Education</button>
+        </div>
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+            A job.
+            </div>
+            <div class="card card-block">
+            Another job.
+            </div>
+            <div class="card card-block">
+            Some other really cool job.
+            </div>
+          </div>
+        </p>
+        <p>
+          <div class="collapse" id="education">
+            <div class="card card-block">
+            BS in Computer Science, VA Commonwealth Univ, 1995
+            </div>
+            <div class="card card-block">
+              Minor in Economics
+            </div>
+          </div>
+        </p>
       </div>
     </div>
   </div>

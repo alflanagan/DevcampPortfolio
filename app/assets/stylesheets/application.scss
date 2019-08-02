@@ -2,6 +2,11 @@
 @import "bootstrap";
 @import "gritter";
 
+@import url('https://fonts.googleapis.com/css?family=Cantata+One|Roboto&display=swap');
+
+$primary-font-stack: 'Cantata One', serif;
+$secondary-font-stack: 'Roboto', sans-serif;
+
 /*
  * Globals
  */
@@ -37,6 +42,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   color: #fff;
+  font-family: $primary-font-stack;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
@@ -47,6 +53,14 @@ body {
   max-width: 55em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $secondary-font-stack;
+}
 
 /*
  * Header

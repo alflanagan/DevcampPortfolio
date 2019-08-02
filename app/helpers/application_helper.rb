@@ -20,14 +20,6 @@ module ApplicationHelper
     end
   end
 
-  def source_helper(layout_name)
-    return unless session[:source]
-
-    greeting = "Thanks for visiting me from #{session[:source]}"
-    greeting << " and you are on the #{layout_name} layout"
-    content_tag :p, greeting, class: 'source-greeting'
-  end
-
   def copyright_generator
     AFlanaganViewTool::Renderer.copyright('A Lloyd Flanagan', 'All rights reserved')
   end

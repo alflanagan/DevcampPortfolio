@@ -23,6 +23,13 @@ module BlogsHelper
       no_intra_emphasis: true,
       autolink: true,
       lax_html_blocks: true,
+      tables: true,
+      strikethrough: true,
+      superscript: true,
+      underline: true,
+      highlight: true,
+      footnotes: true,
+      with_toc_data: true
     }
 
     markdown_to_html = Redcarpet::Markdown.new(htmlcoderay, options)
@@ -35,5 +42,10 @@ module BlogsHelper
 
   def blog_status_color(blog)
     'color: red;' if blog.status == 'draft'
+  end
+
+  # convert string to form that defines a JS template
+  def make_js_template(raw_string)
+    "`#{raw_string.gsub('`', '\\\\`')}`"
   end
 end

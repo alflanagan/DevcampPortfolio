@@ -12,15 +12,18 @@ class Blog < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  def self.special_blogs
-    all
-  end
-
+  # special scope for featured blogs, not currently used
   def self.featured
     limit(2)
   end
 
+  # scope for blogs, most recent, admin user
   def self.recent
     order('created_at DESC')
+  end
+
+  # scope of blogs for a specific topic, all users
+  def self.with_topic(topic_id)
+    where(topic_id: topic_id)
   end
 end

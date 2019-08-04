@@ -1,1 +1,16 @@
-@import "bootstrap";
+
+#skills-edit-form .skill-title,
+#skills-edit-form .skill-percent {
+  background-color: grey;
+}
+
+#skills-edit-form .row {
+  margin-bottom: 0.5rem;
+  .col-4 {
+    margin-right: 0.25rem;
+  }
+}
+
+#editing-skills {
+  margin-bottom: 1.5rem;
+}

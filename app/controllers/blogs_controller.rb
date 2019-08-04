@@ -19,45 +19,50 @@ class BlogsController < ApplicationController
                 Blog.published
               end).recent.page(params[:page]).per(5)
     @page_title = 'Assorted Musings - Blog by A Lloyd Flanagan'
+
+    @topic_list = topic_list
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    if logged_in?(:site_admin) || @blog.published?
-      @blog = Blog.includes(:comments).friendly.find(params[:id])
-      @comment = Comment.new # empty comment for form
+    blog_scope = if logged_in? :site_admin
+                   Blog
+                 else
+                   Blog.published
+                 end
+    @blog = blog_scope.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new # empty comment for form
 
-      @page_title = @blog.title
-      # add keywords as field in blog model
-      @seo_keywords = @blog.body
-    else
-      redirect_to blogs_path, notice: 'You are not authorized to access that page'
-    end
+    @page_title = @blog.title
+    # add keywords as field in blog model
+    @seo_keywords = @blog.body
+
+    @topic_list = topic_list
   end
 
   # GET /blogs/new
   def new
-    if logged_in?(:site_admin)
+    site_admin_only do
       @blog = Blog.new
-    else
-      redirect_to blogs_path, notice: 'You are not authorized to create a blog entry'
+      @topic_list = topic_list
     end
   end
 
   # GET /blogs/1/edit
   def edit
-    unless logged_in? :site_admin
-      redirect_to blogs_path, notice: 'You are not authorized to edit a blog post'
+    site_admin_only do
+      @blog = Blog.friendly.find(params[:id])
+      @topic_list = topic_list
     end
   end
 
   # POST /blogs
   # POST /blogs.json
   def create
-    if logged_in? :site_admin
+    site_admin_only do
       @blog = Blog.new(blog_params)
-
+      @topic_list = topic_list
       respond_to do |format|
         if @blog.save
           format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -65,51 +70,44 @@ class BlogsController < ApplicationController
           format.html { render :new }
         end
       end
-    else
-      redirect_to blogs_path, notice: 'You are not authorized to create a post'
     end
   end
 
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    if logged_in? :site_admin
+    site_admin_only do
       respond_to do |format|
-        if @blog.update!(blog_params)
+        byebug
+        if @blog.update(blog_params)
           format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         else
           format.html { render :edit }
         end
       end
-    else
-      redirect_to blog_path, notice: 'You are not authorized to update a blog post'
     end
   end
 
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
-    if logged_in? :site_admin
+    site_admin_only do
       @blog.destroy!
       respond_to do |format|
         format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       end
-    else
-      redirect_to blog_path, 'You are not authorized to destroy a blog post'
     end
   end
 
   # GET /blogs/1/toggle_status
   def toggle_status
-    if logged_in? :site_admin
+    site_admin_only do
       if @blog.draft?
         @blog.published!
       else
         @blog.draft!
       end
       redirect_to blogs_url, notice: 'post status has been updated'
-    else
-      redirect_to blogs_path, notice: 'You are not authorized to publish posts'
     end
   end
 
@@ -127,5 +125,24 @@ class BlogsController < ApplicationController
 
     def set_sidebar_topics
       @side_bar_topics = Topic.with_blogs
+    end
+
+    def site_admin_only(&_)
+      if logged_in? :site_admin
+        yield
+      else
+        render status: :unauthorized
+      end
+    end
+
+    def topic_list
+      the_list = {}
+      Topic.published.each do |topic|
+        the_list[topic] = []
+        topic.blogs.each do |blog|
+          the_list[topic] << blog
+        end
+      end
+      the_list
     end
 end

@@ -6,6 +6,7 @@
 
 $primary-font-stack: 'Cantata One', serif;
 $secondary-font-stack: 'Roboto', sans-serif;
+$background-image: 'david-moum-tHvbNCwZBVA-unsplash.jpg';
 
 /*
  * Globals
@@ -131,6 +132,7 @@ h6 {
  */
 
 .mastfoot .tech-note {
+  font-family: $secondary-font-stack;
   font-size: 0.75rem;
   border-width: 1px;
   border-color: #595959;
@@ -142,16 +144,43 @@ h6 {
   padding: 6px;
 }
 
+#copyright-notice,
+#bkgnd-image-credit {
+  font-family: $secondary-font-stack;
+}
+
 @media (min-width: 768px) {
   .address {
     margin-top: 100px;
   }
 }
 
-.card-body {
-  color: black;
-  text-align: left;
+.major-heading {
+  font-family: $primary-font-stack;
 }
+
+// =================================================================================
+// CARDS
+.card {
+  font-family: $primary-font-stack;
+  .card-body {
+    text-align: left;
+    background-color: lightgrey;
+    .card-text {
+      a {
+        color: darkcyan;
+      }
+      color: black;
+      font-size: 1.1rem;
+    }
+    .card-title {
+      color: black;
+      text-align: center;
+    }
+  }
+}
+
+// =================================================================================
 
 .auth-links a {
   color: black;
@@ -183,26 +212,27 @@ h6 {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  // background: image-url('david-moum-nbqlWhOVu6k-unsplash.jpg') no-repeat;
-  background: image-url('david-moum-tHvbNCwZBVA-unsplash.jpg') no-repeat;
+  background: image-url($background-image) no-repeat;
   background-size: cover;
 }
 
+// styles from imgsplash.com
 #bkgnd-image-credit {
   font-size: .6rem;
-}
-
-#bkgnd-image-credit a {
-  background-color:black;
-  color:white;
-  text-decoration:none;
-  padding:4px 6px;
-  font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
-  font-size:12px;
-  font-weight:bold;
-  line-height:1.2;
-  display:inline-block;
-  border-radius:3px;
+  margin-right: auto;
+  margin-left: auto;
+  a {
+    background-color:black;
+    color:white;
+    text-decoration:none;
+    padding:4px 6px;
+    font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    line-height:1.2;
+    display:inline-block;
+    border-radius:3px;
+  }
 }
 
 .app-footer {
@@ -211,11 +241,6 @@ h6 {
 
 .app-footer .inner .tech-note {
   background-color: #181818;
-}
-
-#bkgnd-image-credit {
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .cover .lead {

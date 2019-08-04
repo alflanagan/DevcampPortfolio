@@ -1,0 +1,11 @@
+<% if logged_in? :site_admin %>
+  <div class="row">
+    <div class="col">
+      <div class="blog-post-meta btn-group" role="group" aria-label="Admin Actions">
+        <%= link_to blog.status.capitalize, toggle_status_blog_path(blog), class: "btn btn-primary", type: :submit %>
+        <%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-primary", type: :submit %>
+        <%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary", type: :submit %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,3 +1,12 @@
+<script>
+// probably can do this with coffeescript...
+
+$.when($.ready).then(function (e) {
+  $('#status-button').on('click', toggle_status_button)
+  setup_editor()
+})
+</script>
+
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
     <% blog.errors.full_messages.each do |error| %>
@@ -12,21 +21,25 @@
   </div>
 
   <div class="form-group">
-    <%= form.radio_button :status, 'draft' %>
-    <%= form.label :status, 'Draft' %>
-
-    <%= form.radio_button :status, 'published' %>
-    <%= form.label :status, 'Published' %>
+    <button id="status-button"
+            type="button"
+            class="btn btn-outline-primary">
+      Draft
+    </button>
+    <input type="hidden" id="blog_status" name="blog[status]" value="draft">
   </div>
 
   <div class="form-group">
     <%= form.label :topic_id %>
-    <%= form.collection_select(:topic_id, Topic.all, :id, :title,
+    <%= form.collection_select :topic_id,
+                               Topic.order(:title),
+                               :id,
+                               :title,
                                {
                                  selected: blog.topic_id,
                                  include_blank: true,
                                },
-                               class: 'form-control')
+                               class: 'form-control'
     %>
   </div>
 
@@ -38,6 +51,6 @@
   </div>
 
   <div class="form-group">
-    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+    <%= form.submit 'Submit', class: 'btn btn-primary', id: 'submit-button' %>
   </div>
 <% end %>

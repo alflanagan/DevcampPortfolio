@@ -7,8 +7,10 @@ ruby '2.6.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
 gem 'debase', '~> 0.2.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -18,7 +20,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails', '~> 2.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,7 +45,6 @@ group :development do
   gem 'rubocop-performance', '~> 1.4'
   gem 'ruby-debug-ide', '~> 0.7'
   gem 'ruby-lint', '~> 2.3'
-  gem 'sassc-rails', '~> 2.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -60,26 +61,36 @@ gem 'jquery-rails', '~> 4.3'
 
 gem 'a_flanagan_view_tool', '~> 0.1.2'
 
+# User authentication and authorization
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+# include font awesome icons
 gem 'font-awesome-sass', '~> 5.8'
 
+# pagination for blog posts, etc.
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
+# support for uploading files
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
+# image manipulation
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 
+# store uploaded files on AWS S3
 gem 'carrierwave-aws', '~> 1.3'
 
+# support for autoloading .env files
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.4'
 
+# nested forms
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 
+# fancy pop-up fading notifications
 gem 'gritter', '~> 1.2'
 
+# in-memory database
 gem 'redis', '~> 4.1', '>= 4.1.2'
 
 # fast ruby-based markdown parser
@@ -87,3 +98,9 @@ gem 'redcarpet', '~> 3.5'
 
 # syntax highlighting for code blocks
 gem 'coderay', '~> 1.1', '>= 1.1.2'
+
+# Ace editor with markdown support
+gem 'ace-rails-ap', '~> 4.2'
+
+# favicon generator for multiple platforms
+gem 'rails_real_favicon', '~> 0.0.12'

@@ -11,10 +11,6 @@ class Portfolio < ApplicationRecord
   mount_uploader :thumb_image, PortfolioUploader
   mount_uploader :main_image, PortfolioUploader
 
-  def self.angular
-    where(subtitle: 'Angular')
-  end
-
   def self.by_position
     order('position ASC')
   end

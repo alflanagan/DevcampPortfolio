@@ -7,8 +7,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="keywords" content="<%= @seo_keywords %>" />
+    <%= render 'application/favicon' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 

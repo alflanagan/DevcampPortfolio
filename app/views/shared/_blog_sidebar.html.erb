@@ -1,5 +1,5 @@
-<aside class="col-md-4 blog-sidebar">
-  <div class="sidebar-module sidebar-module-inset">
+<aside class="blog-sidebar">
+  <div class="p-4 mb-3 bg-light rounded">
     <h4 class="font-italic">About</h4>
     <p>Adrian L Flanagan is a professional software developer, a father, and a
     tinkerer (not in that order).</p>
@@ -19,10 +19,49 @@
 
   <div class="sidebar-module">
     <h4 class="font-italic">Elsewhere</h4>
-    <ol class="list-unstyled social-links">
-      <li><a href="https://github.com/alflanagan"><%= icon('fab', 'github', class: 'strong') %></a></li>
-      <li><a href="https://twitter.com/lloyd_flanagan"><%= icon('fab', 'twitter', class: 'strong') %></a></li>
-      <li><a href="https://www.linkedin.com/in/alloydflanagan"><%= icon('fab', 'linkedin', class: 'strong') %></a></li>
-    </ol>
+    <div class="container social-links">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="https://github.com/alflanagan"><%= icon('fab', 'github', class: 'strong') %></a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://twitter.com/lloyd_flanagan"><%= icon('fab', 'twitter', class: 'strong') %></a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://www.linkedin.com/in/alloydflanagan"><%= icon('fab', 'linkedin', class: 'strong') %></a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="accordion" id="topic_ul">
+    <% @topic_list.each do |topic, blogs| %>
+      <div class="card">
+        <div class="card-header" id="heading_<%= topic.id %>">
+          <h2 class="mb-0">
+            <button class="btn btn-link"
+              type="button"
+              data-toggle="collapse"
+              data-target="#topic_<%= topic.id %>"
+              aria-expanded="false"
+              aria-controls="topic_<%= topic.id %>">
+            Blogs about: <%= topic.title %></button>
+          </h2>
+        </div>
+        <div class="collapse"
+             id="topic_<%= topic.id %>"
+             aria-labelled-by="heading_<%= topic.id %>"
+             data-parent="#topic_ul">
+          <div class="card-body">
+            <ul>
+              <% blogs.each do |blog| %>
+                <li><%= link_to blog.title, blog_path(blog.id) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </aside><!-- /.blog-sidebar -->

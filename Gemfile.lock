@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     a_flanagan_view_tool (0.1.2)
+    ace-rails-ap (4.2)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -48,8 +49,8 @@ GEM
     autoprefixer-rails (9.6.1)
       execjs
     aws-eventstream (1.0.3)
-    aws-partitions (1.194.0)
-    aws-sdk-core (3.61.2)
+    aws-partitions (1.196.0)
+    aws-sdk-core (3.62.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -100,9 +101,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    dotenv (2.7.4)
-    dotenv-rails (2.7.4)
-      dotenv (= 2.7.4)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -127,6 +128,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -199,6 +201,10 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails_real_favicon (0.0.12)
+      json (>= 1.7, < 3)
+      rails (>= 3.1)
+      rubyzip (~> 1)
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
@@ -232,17 +238,7 @@ GEM
       slop (~> 3.4, >= 3.4.7)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.7)
-      railties (>= 4.0.0, < 6)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
+    rubyzip (1.2.3)
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
@@ -291,6 +287,7 @@ PLATFORMS
 
 DEPENDENCIES
   a_flanagan_view_tool (~> 0.1.2)
+  ace-rails-ap (~> 4.2)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3)
   byebug
@@ -317,6 +314,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.3)
+  rails_real_favicon (~> 0.0.12)
   rcodetools (~> 0.8.5)
   redcarpet (~> 3.5)
   redis (~> 4.1, >= 4.1.2)
@@ -324,7 +322,6 @@ DEPENDENCIES
   rubocop-performance (~> 1.4)
   ruby-debug-ide (~> 0.7)
   ruby-lint (~> 2.3)
-  sass-rails (~> 5.0)
   sassc-rails (~> 2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -337,4 +334,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.3
+   2.0.1

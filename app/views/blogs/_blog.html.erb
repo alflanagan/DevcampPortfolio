@@ -1,6 +1,7 @@
-<div class="blog-post">
+<div class="blog-post card" id="blog-post-<%= blog.id %>">
+  <%= link_to blog.topic.title, topic_path(blog.topic.id) %>
   <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
-  <p class="blog-post-meta">Published <%= blog.created_at.strftime('%B %d, %Y') %></p>
+  <p class="blog-post-meta">Created <%= blog.created_at.strftime('%B %d, %Y') %></p>
 
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 

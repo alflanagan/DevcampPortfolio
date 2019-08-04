@@ -5,12 +5,14 @@
     </div>
   </div>
 <% end %>
-<div class="row blog-main">
+<div class="row blog-main index">
   <div class="col-md-8">
     <%= render @blogs %>
   </div>
 
-  <%= render 'shared/blog_sidebar' %>
+  <div class="col-md-4">
+    <%= render 'shared/blog_sidebar' %>
+  </div>
 
 </div><!-- /.blog-main -->
 

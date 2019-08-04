@@ -27,18 +27,19 @@
     <p>
       <%=  markdown @blog.body %>
     </p>
-    <!-- comment form -->
     <%= render 'comments/comment_form' %>
 
     <div id="comments" data-blog-id="<%= @blog.id %>">
       <%= render @blog.comments %>
     </div>
-
     <div class="row">
       <div class="col">
         <a href="#" class="btn btn-secondary">Back to top</a>
       </div>
     </div>
   </div>
-  <%= render 'shared/blog_sidebar' %>
+    <div class="col-md-4">
+      <%= render 'shared/blog_sidebar', locals: {topic_list: @topic_list} %>
+    </div>
+  </div>
 </div>

@@ -82,4 +82,4 @@ production:
   <<: *default
   database: DevcampPortfolio_production
   username: DevcampPortfolio
-  password: <%= ENV['DEVCAMPPORTFOLIO_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials.postgres!['password'] %>

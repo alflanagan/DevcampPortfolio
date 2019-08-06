@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     a_flanagan_view_tool (0.1.2)
-    ace-rails-ap (4.2)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -90,6 +89,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    commonmarker (0.20.1)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     debase (0.2.3)
@@ -165,6 +166,9 @@ GEM
     parallel (1.17.0)
     parser (2.6.3.0)
       ast (~> 2.4.0)
+    passenger (6.0.2)
+      rack
+      rake (>= 0.8.1)
     petergate (2.0.1)
       activerecord (> 4.0.0)
     pg (1.1.4)
@@ -175,7 +179,6 @@ GEM
     pry-byebug (3.7.0)
       byebug (~> 11.0)
       pry (~> 0.10)
-    puma (3.12.1)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -218,7 +221,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    rubocop (0.72.0)
+    rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -229,6 +232,8 @@ GEM
       rubocop (>= 0.71.0)
     ruby-debug-ide (0.7.0)
       rake (>= 0.8.1)
+    ruby-enum (0.7.2)
+      i18n
     ruby-lint (2.3.1)
       parser (~> 2.2)
       slop (~> 3.4, >= 3.4.7)
@@ -283,7 +288,6 @@ PLATFORMS
 
 DEPENDENCIES
   a_flanagan_view_tool (~> 0.1.2)
-  ace-rails-ap (~> 4.2)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3)
   byebug
@@ -292,6 +296,7 @@ DEPENDENCIES
   cocoon (~> 1.2, >= 1.2.14)
   coderay (~> 1.1, >= 1.1.2)
   coffee-rails (~> 4.2)
+  commonmarker (~> 0.20.1)
   debase (~> 0.2.2)
   devise (~> 4.6)
   fastri (~> 0.3.1)
@@ -304,16 +309,16 @@ DEPENDENCIES
   kaminari (~> 1.1, >= 1.1.1)
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.9, >= 4.9.3)
+  passenger (~> 6.0, >= 6.0.2)
   petergate (~> 2.0, >= 2.0.1)
   pg (>= 0.18, < 2.0)
   pry-byebug
-  puma (~> 3.11)
   rails (~> 5.2.3)
   rails_real_favicon (~> 0.0.12)
   rcodetools (~> 0.8.5)
   redcarpet (~> 3.5)
   redis (~> 4.1, >= 4.1.2)
-  rubocop (~> 0.72.0)
+  rubocop (~> 0.74.0)
   rubocop-performance (~> 1.4)
   ruby-debug-ide (~> 0.7)
   ruby-lint (~> 2.3)

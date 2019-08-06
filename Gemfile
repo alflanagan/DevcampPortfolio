@@ -16,8 +16,10 @@ gem 'debase', '~> 0.2.2'
 gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
+
+# use passenger as the app server
+gem 'passenger', '~> 6.0', '>= 6.0.2'
+# Use rails to build the app
 gem 'rails', '~> 5.2.3'
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1'
@@ -41,7 +43,7 @@ group :development do
   gem 'fastri', '~> 0.3.1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rcodetools', '~> 0.8.5'
-  gem 'rubocop', '~> 0.72.0'
+  gem 'rubocop', '~> 0.74.0'
   gem 'rubocop-performance', '~> 1.4'
   gem 'ruby-debug-ide', '~> 0.7'
   gem 'ruby-lint', '~> 2.3'
@@ -93,11 +95,11 @@ gem 'redis', '~> 4.1', '>= 4.1.2'
 # fast ruby-based markdown parser
 gem 'redcarpet', '~> 3.5'
 
+# standards-based parser
+gem 'commonmarker', '~> 0.20.1'
+
 # syntax highlighting for code blocks
 gem 'coderay', '~> 1.1', '>= 1.1.2'
-
-# Ace editor with markdown support
-gem 'ace-rails-ap', '~> 4.2'
 
 # favicon generator for multiple platforms
 gem 'rails_real_favicon', '~> 0.0.12'

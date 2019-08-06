@@ -81,9 +81,6 @@ gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 # store uploaded files on AWS S3
 gem 'carrierwave-aws', '~> 1.3'
 
-# support for autoloading .env files
-gem 'dotenv-rails', '~> 2.7', '>= 2.7.4'
-
 # nested forms
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 

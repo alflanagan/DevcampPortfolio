@@ -2,8 +2,9 @@
 
 # configure CarrierWave (file uploads) with AWS bucket access
 CarrierWave.configure do |config|
+  secrets = Rails.application.credentials.aws!
   config.storage    = :aws
-  config.aws_bucket = ENV.fetch('S3_BUCKET_NAME') # for AWS-side bucket access permissions config, see section below
+  config.aws_bucket = secrets[:s3_bucket_name] # for AWS-side bucket access permissions config, see section below
   config.aws_acl    = 'private'
 
   # Optionally define an asset host for configurations that are fronted by a
@@ -23,9 +24,9 @@ CarrierWave.configure do |config|
   }
 
   config.aws_credentials = {
-    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-    region: ENV.fetch('AWS_REGION'), # Required
+    access_key_id: secrets[:access_key_id],
+    secret_access_key: secrets[:secret_access_key],
+    region: secrets[:region], # Required
     # stub_responses:    Rails.env.test? # Optional, avoid hitting S3 actual during tests
   }
 

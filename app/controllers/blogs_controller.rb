@@ -78,7 +78,6 @@ class BlogsController < ApplicationController
   def update
     site_admin_only do
       respond_to do |format|
-        byebug
         if @blog.update(blog_params)
           format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         else

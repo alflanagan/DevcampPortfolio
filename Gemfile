@@ -103,3 +103,5 @@ gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 # favicon generator for multiple platforms
 gem 'rails_real_favicon', '~> 0.0.12'
+
+gem 'webpacker', '~> 4.0', '>= 4.0.7'

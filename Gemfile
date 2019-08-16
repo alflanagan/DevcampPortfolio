@@ -17,8 +17,8 @@ gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 
-# use passenger as the app server
-gem 'passenger', '~> 6.0', '>= 6.0.2'
+# Use puma as the app server
+gem 'puma', '~> 4.1'
 # Use rails to build the app
 gem 'rails', '~> 5.2.3'
 # Use SCSS for stylesheets

@@ -2,7 +2,7 @@
 # helper script to run find on files while excluding a whole bunch of stuff we
 # don't care about
 
-PRUNED=(.git doc log node_modules tmp vendor)
+PRUNED=(.git doc log node_modules tmp vendor public bin)
 
 PRUNE_CLAUSE=""
 for X in ${PRUNED[@]}

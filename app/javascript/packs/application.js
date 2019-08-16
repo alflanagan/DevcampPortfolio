@@ -17,6 +17,7 @@
 
 import { Blogs } from './blogs'
 import { Pages } from './pages'
+import { Portfolio } from './portfolios'
 
 console.log('Hello World from Webpacker')
 

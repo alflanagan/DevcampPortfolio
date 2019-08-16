@@ -5,6 +5,14 @@
     "@rails/webpacker": "^4.0.7"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "standard": "^13.1.0",
     "webpack-dev-server": "^3.8.0"
+  },
+  "standard": {
+    "ignore": [
+      "app/assets/javascripts/html5sortable.js"
+    ],
+    "parser": "babel-eslint"
   }
 }

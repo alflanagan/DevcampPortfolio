@@ -28,10 +28,5 @@
       "jest": true,
       "jquery": true
     }
-  },
-  "jest": {
-    "roots": [
-      "test/javascript"
-    ]
   }
 }

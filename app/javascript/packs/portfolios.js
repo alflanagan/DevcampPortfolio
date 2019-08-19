@@ -1,8 +1,10 @@
-/* global $ */
+import $ from 'jquery'
 
 export const Portfolio = {
   setPositions () {
-    $('.card').each(i => $(this).attr('data-pos', i + 1))
+    $('.card').each(function (i) {
+      $(this).attr('data-pos', i + 1)
+    })
   },
 
   _resortItems (e, ui) {

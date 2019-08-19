@@ -6,13 +6,27 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
+    "jest": "^24.9.0",
     "standard": "^13.1.0",
     "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "standard": {
     "ignore": [
       "app/assets/javascripts/html5sortable.js"
     ],
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "jest": true
+    }
+  },
+  "jest": {
+    "roots": [
+      "test/javascript"
+    ]
   }
 }

@@ -6,7 +6,10 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
+    "jquery": "^3.4.1",
+    "regenerator-runtime": "^0.13.3",
     "standard": "^13.1.0",
     "webpack-dev-server": "^3.8.0"
   },
@@ -21,7 +24,8 @@
     "parser": "babel-eslint",
     "env": {
       "browser": true,
-      "jest": true
+      "jest": true,
+      "jquery": true
     }
   },
   "jest": {

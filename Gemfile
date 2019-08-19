@@ -8,9 +8,6 @@ ruby '2.6.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-
 gem 'debase', '~> 0.2.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -57,8 +54,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Bootstrap for UI
 gem 'bootstrap', '~> 4.3'
 
+# Requirement for bootstrap, our code
 gem 'jquery-rails', '~> 4.3'
 
 gem 'a_flanagan_view_tool', '~> 0.1.2'
@@ -104,4 +103,5 @@ gem 'coderay', '~> 1.1', '>= 1.1.2'
 # favicon generator for multiple platforms
 gem 'rails_real_favicon', '~> 0.0.12'
 
+# we use webpacker for installation/delivery of JS packages
 gem 'webpacker', '~> 4.0', '>= 4.0.7'

@@ -5,6 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'coffee-script', '~> 2.4', '>= 2.4.1'
+
+# used for styles in CSS
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

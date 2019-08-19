@@ -2,14 +2,15 @@
   "name": "DevcampPortfolio",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.7"
+    "@rails/webpacker": "^4.0.7",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
-    "jquery": "^3.4.1",
-    "regenerator-runtime": "^0.13.3",
     "standard": "^13.1.0",
     "webpack-dev-server": "^3.8.0"
   },

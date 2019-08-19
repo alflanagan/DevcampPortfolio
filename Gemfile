@@ -57,9 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bootstrap for UI
 gem 'bootstrap', '~> 4.3'
 
-# Requirement for bootstrap, our code
-gem 'jquery-rails', '~> 4.3'
-
 gem 'a_flanagan_view_tool', '~> 0.1.2'
 
 # User authentication and authorization
@@ -70,8 +67,6 @@ gem 'font-awesome-sass', '~> 5.8'
 
 # pagination for blog posts, etc.
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-
-gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # support for uploading files
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'

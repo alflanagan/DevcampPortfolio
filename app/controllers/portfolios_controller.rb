@@ -7,6 +7,9 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index],
          user: { except: [:edit, :update, :create, :destroy, :new, :sort] },
          site_admin: :all
+  # https://stackoverflow.com/a/49959806/132510
+  # https://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection.html
+  protect_from_forgery unless: -> { request.format.json? }
 
   def index
     @portfolio_items = Portfolio.by_position

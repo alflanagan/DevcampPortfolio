@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import Sortable from 'sortablejs'
 
 export const Portfolio = {
   setPositions () {
@@ -28,9 +28,9 @@ export const Portfolio = {
 
   ready () {
     Portfolio.setPositions()
-    $('.sortable').sortable()
-    $('.sortable').sortable().bind('sortupdate', {}, Portfolio._resortItems)
+    var container = document.getElementById('sortable')
+    Sortable.create(container, {
+      onUpdate: Portfolio._resortItems
+    })
   }
 }
-
-$(document).on('turbolinks:load', Portfolio.ready)

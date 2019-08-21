@@ -23,3 +23,5 @@ console.log('Hello World from Webpacker')
 
 // seems like this shouldn't be necessary, but...
 window.Pages = Pages
+
+$(document).on('turbolinks:load', Portfolio.ready)

@@ -7,6 +7,7 @@ ruby '2.6.3'
 
 gem 'coffee-script', '~> 2.4', '>= 2.4.1'
 
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # used for styles in CSS
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 

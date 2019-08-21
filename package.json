@@ -5,7 +5,8 @@
     "@rails/webpacker": "^4.0.7",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
-    "regenerator-runtime": "^0.13.3"
+    "regenerator-runtime": "^0.13.3",
+    "sortablejs": "^1.10.0-rc3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",

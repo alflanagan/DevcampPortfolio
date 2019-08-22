@@ -18,8 +18,10 @@
 // import { Blogs } from './blogs'
 import { Skill } from './skills'
 import { Portfolio } from './portfolios'
+import { actionCableCommentSubmit } from './blogs.cable'
 
 console.log('Hello World from Webpacker')
 
 $(document).on('turbolinks:load', Skill.ready)
 $(document).on('turbolinks:load', Portfolio.ready)
+$(document).on('turbolinks:load', actionCableCommentSubmit)

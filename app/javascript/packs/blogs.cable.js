@@ -1,6 +1,6 @@
 /* global $, App */
 
-$(document).on('turbolinks:load', function () {
+export function actionCableCommentSubmit () {
   const comments = $('#comments')
   if (comments.length > 0) {
     App.global_chat = App.cable.subscriptions.create(
@@ -33,4 +33,4 @@ $(document).on('turbolinks:load', function () {
     e.preventDefault()
     return false
   })
-})
+}

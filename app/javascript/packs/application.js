@@ -16,10 +16,10 @@
 // const imagePath = (name) => images(name, true)
 
 // import { Blogs } from './blogs'
-import { Pages } from './pages'
+import { Skill } from './skills'
 import { Portfolio } from './portfolios'
 
 console.log('Hello World from Webpacker')
 
-$(document).on('turbolinks:load', Pages.ready)
+$(document).on('turbolinks:load', Skill.ready)
 $(document).on('turbolinks:load', Portfolio.ready)

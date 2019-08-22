@@ -1,6 +1,9 @@
 /* global $ */
 
-export class Pages {
+/**
+ * Class for handling editing on Skills page
+ */
+export class Skill {
   // keep track of row being edited
   static CURRENT_EDIT_ROW = -1 // -1 ==> no row edited
 
@@ -10,8 +13,8 @@ export class Pages {
    */
   static triggerSkillEdit (e) {
     const skillId = e.target.dataset['skillId']
-    if (Pages.CURRENT_EDIT_ROW === -1) {
-      Pages.CURRENT_EDIT_ROW = skillId
+    if (Skill.CURRENT_EDIT_ROW === -1) {
+      Skill.CURRENT_EDIT_ROW = skillId
     } else {
       return // we're already editing a row!!
     }
@@ -31,11 +34,11 @@ export class Pages {
    * form is on the page.
    */
   static ready () {
-    Pages.CURRENT_EDIT_ROW = -1
+    Skill.CURRENT_EDIT_ROW = -1
     const skillsForm = document.getElementById('skills-edit-form')
     if (skillsForm !== null) {
-      $('.skill-title').click(Pages.triggerSkillEdit)
-      $('.skill-percent').click(Pages.triggerSkillEdit)
+      $('.skill-title').click(Skill.triggerSkillEdit)
+      $('.skill-percent').click(Skill.triggerSkillEdit)
     }
   }
 }

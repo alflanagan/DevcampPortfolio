@@ -2,12 +2,12 @@
 
 import $ from 'jquery'
 import {
-  Pages
-} from '../../app/javascript/packs/pages'
+  Skill
+} from '../../app/javascript/packs/skills'
 
 global.$ = global.jQuery = $
 
-describe('static class Pages', () => {
+describe('static class Skills', () => {
   describe('static method triggerSkillEdit', () => {
     // sample of actual DOM, with a whole lot of irrelevant stuff removed
     const sampleDoc = `<div class="container" id="skills-edit-form">
@@ -71,7 +71,7 @@ describe('static class Pages', () => {
       test('it hides the skill row, and displays the form', () => {
         document.body.innerHTML = sampleDoc
 
-        Pages.ready()
+        Skill.ready()
 
         expect($('#show_skill_1').css('display')).toBe('block')
         expect($('#edit_skill_1').css('display')).toBe('none')
@@ -87,7 +87,7 @@ describe('static class Pages', () => {
       test('it hides the skill row, and displays the form', () => {
         document.body.innerHTML = sampleDoc
 
-        Pages.ready()
+        Skill.ready()
 
         expect($('#show_skill_1').css('display')).toBe('block')
         expect($('#edit_skill_1').css('display')).toBe('none')
@@ -103,7 +103,7 @@ describe('static class Pages', () => {
       test('it is ignored', () => {
         document.body.innerHTML = sampleDoc
 
-        Pages.ready()
+        Skill.ready()
 
         expect($('#show_skill_1').css('display')).toBe('block')
         expect($('#edit_skill_1').css('display')).toBe('none')
@@ -125,7 +125,7 @@ describe('static class Pages', () => {
     })
 
     // this passes, but breaks test that run after it, since it 'breaks' the
-    // Pages object. Should fix.
+    // Skill object. Should fix.
     xdescribe('when the skills form is not present', () => {
       test('nothing happens', () => {
         document.body.innerHTML = `<div class="container">
@@ -134,11 +134,11 @@ describe('static class Pages', () => {
             <div class="skill-percent" data-skill-id="1">15</div>
           </div>
         </div>`
-        Pages.triggerSkillEdit = jest.fn()
+        Skill.triggerSkillEdit = jest.fn()
 
-        Pages.ready()
+        Skill.ready()
         $('.skill-title').click()
-        expect(Pages.triggerSkillEdit).not.toBeCalled()
+        expect(Skill.triggerSkillEdit).not.toBeCalled()
 
         document.body.innerHTML = `<div class="container" id="skills-edit-form">
           <div id="show_skill_1">
@@ -146,9 +146,9 @@ describe('static class Pages', () => {
             <div class="skill-percent" data-skill-id="1">15</div>
           </div>
         </div>`
-        Pages.ready()
+        Skill.ready()
         $('.skill-title').click()
-        expect(Pages.triggerSkillEdit.mock.calls.length).toBe(1)
+        expect(Skill.triggerSkillEdit.mock.calls.length).toBe(1)
       })
     })
 
@@ -161,7 +161,7 @@ describe('static class Pages', () => {
           </div>
         </div>`
 
-        Pages.ready()
+        Skill.ready()
 
         expect($('#show_skill_1').css('display')).toBe('block')
 

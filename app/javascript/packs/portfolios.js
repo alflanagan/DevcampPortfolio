@@ -27,10 +27,13 @@ export const Portfolio = {
   },
 
   ready () {
-    Portfolio.setPositions()
     var container = document.getElementById('sortable')
-    Sortable.create(container, {
-      onUpdate: Portfolio._resortItems
-    })
+    // if null, there's no sortable content on this page
+    if (container !== null) {
+      Portfolio.setPositions()
+      Sortable.create(container, {
+        onUpdate: Portfolio._resortItems
+      })
+    }
   }
 }

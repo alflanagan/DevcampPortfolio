@@ -14,11 +14,3 @@
     <% end %>
   <% end %>
 </div>
-<% if logged_in? :site_admin %>
-  <script>
-    $(document).on ('turbolinks:load', () => {
-      $('.skill-title').on('click', Pages.trigger_skill_edit)
-      $('.skill-percent').on('click', Pages.trigger_skill_edit)
-    })
-  </script>
-<% end %>

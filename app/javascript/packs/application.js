@@ -15,13 +15,11 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import { Blogs } from './blogs'
+// import { Blogs } from './blogs'
 import { Pages } from './pages'
 import { Portfolio } from './portfolios'
 
 console.log('Hello World from Webpacker')
 
-// seems like this shouldn't be necessary, but...
-window.Pages = Pages
-
+$(document).on('turbolinks:load', Pages.ready)
 $(document).on('turbolinks:load', Portfolio.ready)

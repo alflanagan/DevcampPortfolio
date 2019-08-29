@@ -11,7 +11,7 @@ export function actionCableCommentSubmit () {
       {
         connected: () => {},
         disconnected: () => {},
-        received: data => comments.append(data['comment']),
+        received: data => comments.append(data.comment),
         send_comment: function (comment, blogId) {
           return this.perform('send_comment',
             {
@@ -25,7 +25,7 @@ export function actionCableCommentSubmit () {
   }
   return $('#new_comment').submit(function (e) {
     const $this = $(this)
-    const textarea = $this.find('#comment_content');
+    const textarea = $this.find('#comment_content')
     if ($.trim(textarea.val()).length > 1) {
       App.global_chat.send_comment(textarea.val(), comments.data('blog-id'))
       textarea.val('')

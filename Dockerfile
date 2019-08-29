@@ -40,4 +40,6 @@ COPY --chown=$appuser:$appuser . $apphome
 
 RUN bundle exec rake yarn:install
 
+RUN bundle exec rake webpacker:install
+
 RUN bundle exec rails webpacker:compile

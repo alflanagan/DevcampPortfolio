@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  dbhost:
+    environment:
+      POSTGRES_PASSWORD: stupidpassword
+    image: postgres:alpine
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  website:
+    build:
+      context: .
+      args:
+        appuser: devcampportfolio
+        apphome: /home/devcampportfolio/app
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:migrate && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    depends_on:
+      - dbhost
+    # volumes:
+    #   - .:/usr/src/app
+    ports:
+      - "3000:3000"

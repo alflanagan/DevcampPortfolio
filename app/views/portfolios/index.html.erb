@@ -2,7 +2,7 @@
 
   <div class="album text-muted">
     <div class="container portfolio-container">
-      <div class="row<%= ' sortable' if logged_in?(:site_admin) %>">
+      <div class="row" <% if logged_in?(:site_admin) %>id="sortable"<% end %>>
         <%= render partial: 'portfolio_item', collection: @portfolio_items %>
       </div>
     </div>

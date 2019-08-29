@@ -3,12 +3,14 @@ substitute an actual form -->
   <%= form_for skill, method: :patch, local: true do |form| %>
     <%= text_field skill, :title, class: "skill-title-edit col-4 offset-1",
                                   name: "skill[title]",
-                                  id: "skill-title-edit-#{skill.id}" %>
+                                  id: "skill-title-edit-#{skill.id}",
+                                  value: skill.title %>
     <%# stupid browser wants to set its own width for number field... %>
     <%= number_field skill, :percent_used, in: 5..100,
                                            step: 5,
                                            name: "skill[percent_used]",
                                            id: "skill-percent-edit-#{skill.id}",
-                                           class: "skill-percent-edit col-1" %>
+                                           class: "skill-percent-edit col-1",
+                                           value: skill.percent_used %>
     <%= submit_tag '+', class: "col-1" %>
   <% end %>

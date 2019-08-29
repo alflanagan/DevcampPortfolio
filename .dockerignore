@@ -1,0 +1,11 @@
+.bundle
+coverage
+data
+log
+node_modules
+public
+storage
+tmp
+vagrant
+vagrant-deb
+vendor/bundle

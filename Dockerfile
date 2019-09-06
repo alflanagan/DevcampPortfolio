@@ -4,6 +4,7 @@ ARG appuser
 ARG apphome
 
 ENV LANG C.UTF-8
+ENV RAILS_ENV development
 
 RUN gem install bundler
 
@@ -14,23 +15,21 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn \
   && bundle config --global frozen 1
 
-RUN useradd -m -c"devcampportfolio application user" $appuser
+RUN adduser --gecos '' --disabled-password $appuser
+
+USER $appuser
 
 WORKDIR /home/$appuser
 
-USER $appuser:$appuser
-
 RUN mkdir -p $apphome/vendor
 
-COPY ./Gemfile $apphome/Gemfile
+COPY --chown=$appuser:$appuser ./Gemfile $apphome/Gemfile
 
-COPY ./Gemfile.lock $apphome/Gemfile.lock
+COPY --chown=$appuser:$appuser ./Gemfile.lock $apphome/Gemfile.lock
 
 WORKDIR $apphome
 
 RUN bundle install --path=vendor/bundle
-
-RUN yarn install --check-files
 
 SHELL ["bash", "--login", "-c"]
 
@@ -38,8 +37,6 @@ RUN echo 'export PATH=${HOME}/app/bin:${PATH}' >> ${HOME}/.bash_profile
 
 COPY --chown=$appuser:$appuser . $apphome
 
-RUN bundle exec rake yarn:install
-
-RUN bundle exec rake webpacker:install
+RUN yarn install --check-files
 
 RUN bundle exec rails webpacker:compile

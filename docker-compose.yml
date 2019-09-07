@@ -19,17 +19,24 @@ services:
       args:
         appuser: devcampportfolio
         apphome: /home/devcampportfolio/app
-    # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails s -p 3000"
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - dbhost
     ports:
       - "3000:3000"
     volumes:
-      - ./app:/home/devcampportfolio/app/app
-      - ./config:/home/devcampportfolio/app/config
-      - ./db:/home/devcampportfolio/app/db
-      - ./lib:/home/devcampportfolio/app/lib
-      - ./public:/home/devcampportfolio/app/public
-    # volumes:
-    #   - .:/usr/src/app
+      - ./app/:/home/devcampportfolio/app/app
+      - ./babel.config.js:/home/devcampportfolio/app/babel.config.js
+      - ./bin/:/home/devcampportfolio/app/bin
+      - ./.browserslistrc:/home/devcampportfolio/app/.browserslistrc
+      - ./config/:/home/devcampportfolio/app/config
+      - ./config.ru:/home/devcampportfolio/app/config.ru
+      - ./db/:/home/devcampportfolio/app/db
+      - ./Gemfile:/home/devcampportfolio/app/Gemfile
+      - ./Gemfile.lock:/home/devcampportfolio/app/Gemfile.lock
+      - ./jest.config.js:/home/devcampportfolio/app/jest.config.js
+      - ./lib/:/home/devcampportfolio/app/lib
+      - ./package.json:/home/devcampportfolio/app/package.json
+      - ./postcss.config.js:/home/devcampportfolio/app/postcss.config.js
+      - ./.ruby-version:/home/devcampportfolio/app/.ruby-version
+      - ./yarn.lock:/home/devcampportfolio/app/yarn.lock

@@ -2,9 +2,10 @@ FROM ruby:2.6.3
 
 ARG appuser
 ARG apphome
+ARG railsenv
 
 ENV LANG C.UTF-8
-ENV RAILS_ENV development
+ENV RAILS_ENV ${railsenv}
 
 RUN gem install bundler
 

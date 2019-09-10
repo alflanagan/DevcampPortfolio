@@ -1,20 +1,12 @@
 <footer class="text-muted">
   <div class="container">
     <div class="row">
-      <p class="col-md"></p>
-      <p class="col-md-4 tech-note">Note: this web design is based on the concepts developed in the online course <a
-          href="https://www.udemy.com/professional-rails-5-development-course/">"Dissecting Ruby on Rails"</a>, by
-        Jordan Hudgens. Styles are based on example templates from <a href="https://getbootstrap.com">Bootstrap
-          4</a>.</p>
-      <p class="col-md"></p>
-    </div>
-    <div class="row">
-      <p class="col-md"></p>
-      <p class="col-md-4 text-center"><%= copyright_generator %></p>
-      <p class="col-md text-right">
+      <div class="col-md"><%= render "shared/tech_note" %></div>
+      <div class="col-md-4 text-center"><%= copyright_generator %></div>
+      <div class="col-md text-right">
         <%= link_to  "View all Portfolio Items", portfolios_path %> |
         <a href="#">Back to Top</a>
-      </p>
+      </div>
     </div>
   </div>
 </footer>

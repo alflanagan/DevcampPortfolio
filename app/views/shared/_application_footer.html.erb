@@ -1,15 +1,14 @@
 <footer class="mastfoot mt-auto app-footer">
   <div class="inner">
-    <aside class="tech-note">Note: this web design is based on the concepts developed in the online course <a
-        href="https://www.udemy.com/professional-rails-5-development-course/">"Dissecting Ruby on Rails"</a>, by
-      Jordan Hudgens. Styles are based on example templates from <a href="https://getbootstrap.com">Bootstrap 4</a>.
-    </aside>
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-8">
+        <div class="col-4">
+          <%= render "shared/tech_note" %>
+        </div>
+        <div class="col-4">
           <%= copyright_generator %>
         </div>
-        <div class="col-md-4">
+        <div class="col-4">
           <span id="bkgnd-image-credit">Background Image:
             <a
               href="https://unsplash.com/@davidmoum?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"

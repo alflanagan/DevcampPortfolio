@@ -32,7 +32,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # user authentication
-gem 'devise', '~> 4.6'
+gem 'devise', '~> 4.7'
 # use slugs instead of integers to identify posts
 gem 'friendly_id', '~> 5.2'
 

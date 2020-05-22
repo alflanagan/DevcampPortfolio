@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg', '>= 0.18', '< 2.0'
 
 # Use puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 # Use rails to build the app
 gem 'rails', '~> 5.2.3'
 # Use SCSS for stylesheets

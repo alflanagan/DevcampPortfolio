@@ -72,7 +72,7 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-sass', '~> 5.8'
 
 # pagination for blog posts, etc.
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 
 # support for uploading files
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
